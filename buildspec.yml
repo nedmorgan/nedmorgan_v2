@@ -1,16 +1,23 @@
-version: 0.1
+version: 0.2
 frontend:
   phases:
+    install:
+      commands:
+        - echo Install Node 12....
+        - curl -sL https://deb.nodesource.com/setup_12.x | bash -
+        - apt install -y nodejs
     preBuild:
       commands:
+        - echo Install dependencies....
         - npm ci
     build:
       commands:
+        - echo Running build....
         - npm run build
   artifacts:
-    type: zip
-    paths:
-      - './build/**/*'
+    files:
+      - '**/*'
+    discard-paths: no
   cache:
     paths:
       - './node_modules/**/*'
