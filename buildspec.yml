@@ -8,9 +8,9 @@ frontend:
       commands:
         - npm run build
   artifacts:
-    baseDirectory: build
-    files:
-      - '**/*'
+    type: zip
+    paths:
+      - './build/**/*'
   cache:
     paths:
-      - node_modules/**/*
+      - './node_modules/**/*'
