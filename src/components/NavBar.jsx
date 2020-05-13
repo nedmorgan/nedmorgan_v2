@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { NavContainer } from '../styles/NavBarStyles'
 
-const MENU = ['About', 'Portfolio', 'Contact']
+const MENU = ['About', 'Portfolio', 'Contact', 'Connect']
 
 export default class NavBar extends Component {
   state = {

@@ -82,6 +82,10 @@ export const NavContainer = styled.div`
       animation: 1.2s ${fadeDown};
     }
 
+    #topnav3 {
+      animation: 1.2s ${fadeDown};
+    }
+
     .icon-link {
       margin-left: 0.5em;
       width: 0.9em;

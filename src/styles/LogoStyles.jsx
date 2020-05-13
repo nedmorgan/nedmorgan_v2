@@ -44,7 +44,7 @@ export const LogoContainer = styled.div`
   }
 
   @media screen and (max-width: 600px) {
-    height: 80vh;
+    height: 85vh;
 
     p {
       font-size: 2.5em;
