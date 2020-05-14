@@ -29,7 +29,7 @@ export const NavContainer = styled.div`
     margin-bottom: 0.2em;
   }
 
-  #topnav0 {
+  #topnav1 {
     margin-left: 1em;
   }
 
@@ -69,20 +69,20 @@ export const NavContainer = styled.div`
       padding-left: 1em;
     }
 
-    #topnav0 {
+    #topnav1 {
       margin-left: 0;
       animation: 0.8s ${fadeDown};
     }
 
-    #topnav1 {
+    #topnav2 {
       animation: 1s ${fadeDown};
     }
 
-    #topnav2 {
+    #topnav3 {
       animation: 1.2s ${fadeDown};
     }
 
-    #topnav3 {
+    #topnav4 {
       animation: 1.2s ${fadeDown};
     }
 
