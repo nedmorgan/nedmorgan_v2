@@ -7,8 +7,10 @@ const ModalBox = ({ handleClose, show, children }) => {
   return (
     <div className={showHideClassName}>
       <section className='modal-main'>
+        <button className='close-button' onClick={handleClose}>
+          <i onClick={handleClose} class='fas fa-times-circle'></i>
+        </button>
         {children}
-        <button onClick={handleClose}>close</button>
       </section>
     </div>
   )
@@ -23,8 +25,24 @@ export default class Modal extends Component {
             show={this.props.displayModal}
             handleClose={this.props.hideModal}
           >
-            <p>Modal</p>
-            <p>Data</p>
+            <h1>Let's Connect!</h1>
+            <form>
+              <label className='form-labels'>
+                Name:
+                <input className='form-inputs' type='text' name='name' />
+              </label>
+              <label className='form-labels'>
+                E-mail:
+                <input className='form-inputs' type='text' name='email' />
+              </label>
+              <label className='form-labels'>
+                Comment:
+                <textarea className='comment-box' type='text' name='comment' />
+              </label>
+              <button className='submit-button' type='submit'>
+                Submit
+              </button>
+            </form>
           </ModalBox>
         </main>
       </ModalContainer>

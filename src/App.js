@@ -12,7 +12,7 @@ export default class App extends Component {
     this.state = {
       displaySocial: false,
       activeNav: false,
-      displayModal: false,
+      displayModal: true,
     }
   }
 
