@@ -3,6 +3,7 @@ import './App.css'
 import NavBar from '../src/components/NavBar'
 import Logo from '../src/components/Logo'
 import Social from '../src/components/Social'
+import Connect from '../src/components/Connect'
 
 export default class App extends Component {
   constructor(props) {
@@ -36,6 +37,7 @@ export default class App extends Component {
           activeNav={this.state.activeNav}
         />
         <Social displaySocial={this.state.displaySocial} />
+        <Connect />
         <Logo />
       </div>
     )

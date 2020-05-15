@@ -19,7 +19,11 @@ export const NavContainer = styled.div`
     display: none;
   }
 
-  a {
+  .icon-link {
+    visibility: hidden;
+  }
+
+  button {
     color: black;
     font-family: 'Raleway', sans-serif;
     font-size: 2em;
@@ -27,13 +31,18 @@ export const NavContainer = styled.div`
     padding: 0.3em;
     margin-top: 0.2em;
     margin-bottom: 0.2em;
+    border: none;
+    margin-left: 0.2em;
+    background-color: transparent;
+    outline: none;
+    overflow: hidden;
   }
 
   #topnav1 {
     margin-left: 1em;
   }
 
-  a:hover {
+  button:hover {
     cursor: pointer;
     background-color: black;
     opacity: 0.7;
@@ -46,6 +55,7 @@ export const NavContainer = styled.div`
     position: absolute;
     width: 100vw;
     animation: 1s ${fadeDown};
+    align-items: baseline;
 
     .active-nav {
       background-color: whitesmoke;
@@ -82,13 +92,10 @@ export const NavContainer = styled.div`
       animation: 1.2s ${fadeDown};
     }
 
-    #topnav4 {
-      animation: 1.2s ${fadeDown};
-    }
-
     .icon-link {
       margin-left: 0.5em;
-      width: 0.9em;
+      width: 1.5em;
+      visibility: visible;
     }
 
     .icon {
