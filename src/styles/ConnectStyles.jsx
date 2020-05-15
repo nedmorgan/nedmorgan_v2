@@ -10,7 +10,11 @@ export const ConnectContainer = styled.div`
     color: whitesmoke;
     font-size: 2em;
     margin: 0.5em;
+  }
+
+  .connect-icon:hover {
     cursor: pointer;
+    opacity: 0.7;
   }
 
   .connect-icon:active {

@@ -5,7 +5,10 @@ export default class Connect extends Component {
   render() {
     return (
       <ConnectContainer>
-        <i class='far fa-envelope connect-icon'></i>
+        <i
+          onClick={(e) => this.props.openModal(e)}
+          class='far fa-envelope connect-icon'
+        ></i>
       </ConnectContainer>
     )
   }

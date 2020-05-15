@@ -4,6 +4,7 @@ import NavBar from '../src/components/NavBar'
 import Logo from '../src/components/Logo'
 import Social from '../src/components/Social'
 import Connect from '../src/components/Connect'
+import Modal from '../src/components/Modal'
 
 export default class App extends Component {
   constructor(props) {
@@ -11,6 +12,7 @@ export default class App extends Component {
     this.state = {
       displaySocial: false,
       activeNav: false,
+      displayModal: false,
     }
   }
 
@@ -19,6 +21,22 @@ export default class App extends Component {
     this.setState((state, props) => {
       return { activeNav: !state.activeNav, displaySocial: false }
     })
+  }
+
+  openModal = (e) => {
+    e.preventDefault()
+    this.setState((state, props) => {
+      return {
+        displayModal: true,
+        displaySocial: false,
+        activeNav: false,
+      }
+    })
+  }
+
+  hideModal = (e) => {
+    e.preventDefault()
+    this.setState({ displayModal: false })
   }
 
   toggleConnect = (e) => {
@@ -37,7 +55,11 @@ export default class App extends Component {
           activeNav={this.state.activeNav}
         />
         <Social displaySocial={this.state.displaySocial} />
-        <Connect />
+        <Connect openModal={this.openModal} />
+        <Modal
+          displayModal={this.state.displayModal}
+          hideModal={this.hideModal}
+        />
         <Logo />
       </div>
     )

@@ -11,8 +11,8 @@ export const NavContainer = styled.div`
   opacity: 0.7;
 
   .inactive-nav {
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
   }
 
   .icon {
@@ -26,7 +26,7 @@ export const NavContainer = styled.div`
   button {
     color: black;
     font-family: 'Raleway', sans-serif;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: bold;
     padding: 0.3em;
     margin-top: 0.2em;
