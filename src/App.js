@@ -13,6 +13,7 @@ export default class App extends Component {
       displaySocial: false,
       activeNav: false,
       displayModal: true,
+      contact: {},
     }
   }
 
@@ -46,6 +47,15 @@ export default class App extends Component {
     })
   }
 
+  handleChange = (e) => {
+    const target = e.target
+    const value = target.value
+    const name = target.name
+    const updatedContact = { ...this.state.contact }
+    updatedContact[name] = value
+    this.setState({ contact: updatedContact })
+  }
+
   render() {
     return (
       <div className='App'>
@@ -58,6 +68,8 @@ export default class App extends Component {
         <Connect openModal={this.openModal} />
         <Modal
           displayModal={this.state.displayModal}
+          handleChange={this.handleChange}
+          contact={this.state.contact}
           hideModal={this.hideModal}
         />
         <Logo />

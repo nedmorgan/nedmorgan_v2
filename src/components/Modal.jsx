@@ -29,15 +29,33 @@ export default class Modal extends Component {
             <form>
               <label className='form-labels'>
                 Name:
-                <input className='form-inputs' type='text' name='name' />
+                <input
+                  onChange={this.props.handleChange}
+                  value={this.props.contact.name}
+                  className='form-inputs'
+                  type='text'
+                  name='name'
+                />
               </label>
               <label className='form-labels'>
                 E-mail:
-                <input className='form-inputs' type='text' name='email' />
+                <input
+                  onChange={this.props.handleChange}
+                  value={this.props.contact.email}
+                  className='form-inputs'
+                  type='text'
+                  name='email'
+                />
               </label>
               <label className='form-labels'>
-                Comment:
-                <textarea className='comment-box' type='text' name='comment' />
+                Message:
+                <textarea
+                  onChange={this.props.handleChange}
+                  value={this.props.contact.comment}
+                  className='comment-box'
+                  type='text'
+                  name='comment'
+                />
               </label>
               <button className='submit-button' type='submit'>
                 Submit

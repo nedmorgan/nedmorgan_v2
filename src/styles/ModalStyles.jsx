@@ -67,6 +67,8 @@ export const ModalContainer = styled.div`
   .comment-box {
     border-radius: 5px;
     font-family: 'Raleway', sans-serif;
+    font-size: 0.75em;
+    padding: 0.5em;
     margin-left: 1em;
     margin-top: 1em;
     border: black;
