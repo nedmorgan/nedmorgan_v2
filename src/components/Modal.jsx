@@ -45,6 +45,9 @@ export default class Modal extends Component {
                   className='form-inputs'
                   type='text'
                   name='email'
+                  onBlur={(e) =>
+                    this.props.validateEmail(e, this.props.contact.email)
+                  }
                 />
               </label>
               <label className='form-labels'>
@@ -55,9 +58,17 @@ export default class Modal extends Component {
                   className='comment-box'
                   type='text'
                   name='comment'
+                  rows='5'
                 />
               </label>
-              <button className='submit-button' type='submit'>
+              <button
+                className={
+                  this.props.validEmail
+                    ? 'visible-button submit-button'
+                    : 'invisible-button submit-button'
+                }
+                type='submit'
+              >
                 Submit
               </button>
             </form>

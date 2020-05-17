@@ -31,7 +31,7 @@ export const ModalContainer = styled.div`
     background: whitesmoke;
     width: 50%;
     height: auto;
-    top: 30%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 5px;
@@ -80,6 +80,7 @@ export const ModalContainer = styled.div`
 
   .comment-box {
     width: 50%;
+    resize: none;
   }
 
   .submit-button {
@@ -104,5 +105,38 @@ export const ModalContainer = styled.div`
     cursor: pointer;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
       0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .invisible-button {
+    visibility: hidden;
+  }
+
+  .visible-button {
+    visibility: visible;
+  }
+
+  @media screen and (max-width: 600px) {
+    .form-labels {
+      display: flex;
+      flex-direction: column;
+      margin-top: 0.25em;
+    }
+
+    .modal-main {
+      width: 80%;
+      height: 60%;
+      top: 35%;
+    }
+
+    .form-inputs,
+    .comment-box {
+      width: 75%;
+      margin-top: 0.25em;
+    }
+
+    .submit-button {
+      width: 21%;
+      margin-left: 0.5em;
+    }
   }
 `

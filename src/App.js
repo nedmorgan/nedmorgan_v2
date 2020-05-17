@@ -13,7 +13,8 @@ export default class App extends Component {
       displaySocial: false,
       activeNav: false,
       displayModal: true,
-      contact: {},
+      validEmail: false,
+      contact: { name: '', email: '', comment: '' },
     }
   }
 
@@ -56,6 +57,17 @@ export default class App extends Component {
     this.setState({ contact: updatedContact })
   }
 
+  validateEmail = (e, email) => {
+    e.preventDefault()
+    const regEx = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    let validEmail = regEx.test(String(email).toLowerCase())
+    if (validEmail === false) {
+      this.setState({ validEmail: false })
+    } else {
+      this.setState({ validEmail: true })
+    }
+  }
+
   render() {
     return (
       <div className='App'>
@@ -71,6 +83,8 @@ export default class App extends Component {
           handleChange={this.handleChange}
           contact={this.state.contact}
           hideModal={this.hideModal}
+          validateEmail={this.validateEmail}
+          validEmail={this.state.validEmail}
         />
         <Logo />
       </div>
