@@ -7,7 +7,13 @@ export default class Logo extends Component {
   render() {
     return (
       <LogoContainer>
-        <div className='content-container'>
+        <div
+          className={
+            this.props.displayModal
+              ? 'hidden content-container'
+              : 'content-container'
+          }
+        >
           {LOGO.map((word, i) => {
             return <p key={i}>{word}</p>
           })}

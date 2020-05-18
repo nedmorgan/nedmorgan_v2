@@ -29,9 +29,9 @@ export const ModalContainer = styled.div`
   .modal-main {
     position: fixed;
     background: whitesmoke;
-    width: 50%;
+    width: 60%;
     height: auto;
-    top: 25%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 5px;

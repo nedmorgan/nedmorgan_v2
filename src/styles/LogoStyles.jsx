@@ -43,6 +43,11 @@ export const LogoContainer = styled.div`
     padding-bottom: 0.5em;
   }
 
+  .hidden {
+    visibility: hidden;
+    animation: 1s ${fade};
+  }
+
   @media screen and (max-width: 600px) {
     height: 85vh;
 

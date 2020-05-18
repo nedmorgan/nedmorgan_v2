@@ -86,7 +86,7 @@ export default class App extends Component {
           validateEmail={this.validateEmail}
           validEmail={this.state.validEmail}
         />
-        <Logo />
+        <Logo displayModal={this.state.displayModal} />
       </div>
     )
   }
