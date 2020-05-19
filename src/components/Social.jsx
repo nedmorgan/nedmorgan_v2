@@ -12,7 +12,7 @@ export default class Social extends Component {
         >
           <a
             href='https://www.linkedin.com/in/nathanielpmorgan/'
-            tabindex='1'
+            tabIndex='1'
             title='Linkedin link'
             target='_blank'
             rel='noopener noreferrer'
@@ -21,7 +21,7 @@ export default class Social extends Component {
           </a>
           <a
             href='https://www.instagram.com/ned_morgan/?hl=en'
-            tabindex='2'
+            tabIndex='2'
             title='Instagram link'
             target='_blank'
             rel='noopener noreferrer'
@@ -30,12 +30,12 @@ export default class Social extends Component {
           </a>
           <a
             href='https://drive.google.com/open?id=12WrvcXmG9jhVdDnCzwlwimdJsCO_MKoN'
-            tabindex='3'
+            tabIndex='3'
             title='Resume link'
             target='_blank'
             rel='noopener noreferrer'
           >
-            <i class='social-icon fas fa-file'></i>
+            <i className='social-icon fas fa-file'></i>
           </a>
         </div>
       </SocialContainer>

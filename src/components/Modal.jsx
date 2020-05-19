@@ -8,7 +8,7 @@ const ModalBox = ({ handleClose, show, children }) => {
     <div className={showHideClassName}>
       <section className='modal-main'>
         <button className='close-button' onClick={handleClose}>
-          <i onClick={handleClose} class='fas fa-times-circle'></i>
+          <i onClick={handleClose} className='fas fa-times-circle'></i>
         </button>
         {children}
       </section>

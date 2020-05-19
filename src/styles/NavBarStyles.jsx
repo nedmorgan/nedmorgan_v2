@@ -11,8 +11,8 @@ export const NavContainer = styled.div`
   opacity: 0.7;
 
   .inactive-nav {
-    padding-top: 0.7em;
-    padding-bottom: 0.7em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
   }
 
   .icon {

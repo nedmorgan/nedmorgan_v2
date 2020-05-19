@@ -7,7 +7,7 @@ export default class Connect extends Component {
       <ConnectContainer>
         <i
           onClick={(e) => this.props.openModal(e)}
-          class={
+          className={
             this.props.displayEmailIcon
               ? 'far fa-envelope connect-icon'
               : 'inactive-email'

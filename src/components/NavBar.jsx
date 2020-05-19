@@ -10,7 +10,7 @@ const MENU = [
 export default class NavBar extends Component {
   render() {
     return (
-      <NavContainer className='navigation'>
+      <NavContainer>
         <button className='icon-link'>
           <i
             onClick={(e) => this.props.toggleNavBar(e)}
