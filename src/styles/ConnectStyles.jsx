@@ -4,7 +4,10 @@ import { fadeInDown } from 'react-animations'
 export const fadeDown = keyframes`${fadeInDown}`
 
 export const ConnectContainer = styled.div`
-  float: right;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 
   .connect-icon {
     color: whitesmoke;
@@ -19,6 +22,10 @@ export const ConnectContainer = styled.div`
 
   .connect-icon:active {
     color: #3366bb;
+  }
+
+  .inactive-email {
+    visibility: hidden;
   }
 
   @media screen and (max-width: 600px) {

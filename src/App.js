@@ -5,6 +5,7 @@ import Logo from '../src/components/Logo'
 import Social from '../src/components/Social'
 import Connect from '../src/components/Connect'
 import Modal from '../src/components/Modal'
+import About from '../src/components/About'
 
 export default class App extends Component {
   constructor(props) {
@@ -12,7 +13,9 @@ export default class App extends Component {
     this.state = {
       displaySocial: false,
       activeNav: false,
-      displayModal: true,
+      displayModal: false,
+      displayAbout: false,
+      displayEmailIcon: true,
       validEmail: false,
       contact: { name: '', email: '', comment: '' },
     }
@@ -22,6 +25,23 @@ export default class App extends Component {
     e.preventDefault()
     this.setState((state, props) => {
       return { activeNav: !state.activeNav, displaySocial: false }
+    })
+  }
+
+  toggleConnect = (e) => {
+    e.preventDefault()
+    this.setState((state, props) => {
+      return { displaySocial: !state.displaySocial }
+    })
+  }
+
+  toggleAbout = (e) => {
+    e.preventDefault()
+    this.setState((state, props) => {
+      return {
+        displayAbout: !state.displayAbout,
+        displayEmailIcon: !state.displayEmailIcon,
+      }
     })
   }
 
@@ -39,13 +59,6 @@ export default class App extends Component {
   hideModal = (e) => {
     e.preventDefault()
     this.setState({ displayModal: false })
-  }
-
-  toggleConnect = (e) => {
-    e.preventDefault()
-    this.setState((state, props) => {
-      return { displaySocial: !state.displaySocial }
-    })
   }
 
   handleChange = (e) => {
@@ -73,11 +86,16 @@ export default class App extends Component {
       <div className='App'>
         <NavBar
           toggleConnect={this.toggleConnect}
+          toggleAbout={this.toggleAbout}
           toggleNavBar={this.toggleNavBar}
           activeNav={this.state.activeNav}
         />
         <Social displaySocial={this.state.displaySocial} />
-        <Connect openModal={this.openModal} />
+        <Connect
+          openModal={this.openModal}
+          displayEmailIcon={this.state.displayEmailIcon}
+        />
+        <About displayAbout={this.state.displayAbout} />
         <Modal
           displayModal={this.state.displayModal}
           handleChange={this.handleChange}

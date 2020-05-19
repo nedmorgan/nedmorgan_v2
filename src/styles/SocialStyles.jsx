@@ -1,8 +1,7 @@
 import styled, { keyframes } from 'styled-components'
-import { slideInLeft, fadeOutLeft } from 'react-animations'
+import { slideInLeft } from 'react-animations'
 
-export const slideLeft = keyframes`${slideInLeft}`
-export const fadeOut = keyframes`${fadeOutLeft}`
+export const slideFromLeft = keyframes`${slideInLeft}`
 
 export const SocialContainer = styled.div`
   .active-social {
@@ -17,12 +16,11 @@ export const SocialContainer = styled.div`
     border-bottom-right-radius: 5px;
     display: flex;
     flex-direction: column;
-    animation: 1s ${slideLeft};
+    animation: 1s ${slideFromLeft};
   }
 
   .inactive-social {
     left: -300px;
-    animation: 3s ${fadeOut};
     position: absolute;
   }
 
