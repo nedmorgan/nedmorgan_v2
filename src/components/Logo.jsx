@@ -9,7 +9,7 @@ export default class Logo extends Component {
       <LogoContainer>
         <div
           className={
-            this.props.displayModal
+            this.props.displayModal || this.props.hideLogo
               ? 'hidden content-container'
               : 'content-container'
           }

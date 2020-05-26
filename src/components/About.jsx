@@ -10,6 +10,10 @@ export default class About extends Component {
             this.props.displayAbout ? `active-about` : `inactive-about`
           }
         >
+          <i
+            onClick={(e) => this.props.toggleAbout(e)}
+            class='fas fa-times close-icon'
+          ></i>
           <h1>About</h1>
           <p>
             Most people know me as a cyclist. I'm on my bike most every chance I

@@ -6,6 +6,8 @@ import Social from '../src/components/Social'
 import Modal from '../src/components/Modal'
 import About from '../src/components/About'
 
+const isMobile = window.innerWidth < 600
+
 export default class App extends Component {
   constructor(props) {
     super(props)
@@ -16,6 +18,8 @@ export default class App extends Component {
       displayAbout: false,
       displayEmailIcon: true,
       validEmail: false,
+      isMobile: false,
+      hideLogo: false,
       contact: { name: '', email: '', comment: '' },
     }
   }
@@ -36,12 +40,21 @@ export default class App extends Component {
 
   toggleAbout = (e) => {
     e.preventDefault()
-    this.setState((state, props) => {
-      return {
-        displayAbout: !state.displayAbout,
-        displayEmailIcon: !state.displayEmailIcon,
-      }
-    })
+    if (isMobile === true) {
+      this.setState((state, props) => {
+        return {
+          displayAbout: !state.displayAbout,
+          hideLogo: !state.hideLogo,
+        }
+      })
+    } else {
+      this.setState((state, props) => {
+        return {
+          displayAbout: !state.displayAbout,
+          displayEmailIcon: !state.displayEmailIcon,
+        }
+      })
+    }
   }
 
   openModal = (e) => {
@@ -92,7 +105,10 @@ export default class App extends Component {
           displayEmailIcon={this.state.displayEmailIcon}
         />
         <Social displaySocial={this.state.displaySocial} />
-        <About displayAbout={this.state.displayAbout} />
+        <About
+          displayAbout={this.state.displayAbout}
+          toggleAbout={this.toggleAbout}
+        />
         <Modal
           displayModal={this.state.displayModal}
           handleChange={this.handleChange}
@@ -101,7 +117,10 @@ export default class App extends Component {
           validateEmail={this.validateEmail}
           validEmail={this.state.validEmail}
         />
-        <Logo displayModal={this.state.displayModal} />
+        <Logo
+          displayModal={this.state.displayModal}
+          hideLogo={this.state.hideLogo}
+        />
       </div>
     )
   }

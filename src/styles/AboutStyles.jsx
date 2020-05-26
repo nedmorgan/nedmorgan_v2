@@ -21,6 +21,12 @@ export const AboutContainer = styled.div`
     padding-left: 1em;
   }
 
+  .close-icon {
+    margin-top: 0.5em;
+    float: right;
+    font-size: 1.25em;
+  }
+
   .inactive-about {
     position: absolute;
     visibility: hidden;
@@ -33,5 +39,28 @@ export const AboutContainer = styled.div`
 
   p:last-of-type {
     margin-bottom: 1em;
+  }
+
+  @media screen and (max-width: 600px) {
+    justify-content: center;
+
+    .active-about {
+      border-radius: 5px;
+      width: 75vw;
+      margin-top: 4em;
+    }
+
+    h1 {
+      font-size: 1.25em;
+      margin-top: 0.5em;
+    }
+
+    p {
+      font-size: 0.85em;
+    }
+
+    p:first-of-type {
+      margin-top: 0.25em;
+    }
   }
 `
