@@ -3,7 +3,6 @@ import './App.css'
 import NavBar from '../src/components/NavBar'
 import Logo from '../src/components/Logo'
 import Social from '../src/components/Social'
-import Connect from '../src/components/Connect'
 import Modal from '../src/components/Modal'
 import About from '../src/components/About'
 
@@ -21,7 +20,7 @@ export default class App extends Component {
     }
   }
 
-  toggleNavBar = (e) => {
+  toggleNav = (e) => {
     e.preventDefault()
     this.setState((state, props) => {
       return { activeNav: !state.activeNav, displaySocial: false }
@@ -87,14 +86,12 @@ export default class App extends Component {
         <NavBar
           toggleConnect={this.toggleConnect}
           toggleAbout={this.toggleAbout}
-          toggleNavBar={this.toggleNavBar}
+          toggleNav={this.toggleNav}
           activeNav={this.state.activeNav}
-        />
-        <Social displaySocial={this.state.displaySocial} />
-        <Connect
           openModal={this.openModal}
           displayEmailIcon={this.state.displayEmailIcon}
         />
+        <Social displaySocial={this.state.displaySocial} />
         <About displayAbout={this.state.displayAbout} />
         <Modal
           displayModal={this.state.displayModal}

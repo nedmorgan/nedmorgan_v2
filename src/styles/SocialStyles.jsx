@@ -50,12 +50,12 @@ export const SocialContainer = styled.div`
     align-items: center;
     height: 100vh;
     position: absolute;
-  }
 
-  .social-icon {
-    padding-top: 0.7em;
-    padding-left: 0.7em;
-    padding-right: 0.7em;
-    font-size: 1.5em;
+    .social-icon {
+      padding-top: 0.7em;
+      padding-left: 0.7em;
+      padding-right: 0.7em;
+      font-size: 1.5em;
+    }
   }
 `

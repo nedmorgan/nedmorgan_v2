@@ -6,13 +6,14 @@ export const fadeDown = keyframes`${fadeInDown}`
 
 export const NavContainer = styled.div`
   display: flex;
+  justify-content: space-evenly;
   overflow: hidden;
-  background-color: whitesmoke;
+  background-color: black;
   opacity: 0.7;
+  width: 100%;
 
-  .inactive-nav {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+  .nav-div {
+    width: 50%;
   }
 
   .icon {
@@ -24,13 +25,11 @@ export const NavContainer = styled.div`
   }
 
   button {
-    color: black;
+    color: whitesmoke;
     font-family: 'Raleway', sans-serif;
     font-size: 1.5em;
     font-weight: bold;
     padding: 0.3em;
-    margin-top: 0.2em;
-    margin-bottom: 0.2em;
     border: none;
     margin-left: 0.2em;
     background-color: transparent;
@@ -51,17 +50,18 @@ export const NavContainer = styled.div`
   }
 
   @media screen and (max-width: 600px) {
-    flex-direction: column;
+    justify-content: space-evenly;
     position: absolute;
     width: 100vw;
     animation: 1s ${fadeDown};
     align-items: baseline;
 
     .active-nav {
-      background-color: whitesmoke;
+      background-color: black;
       opacity: 0.7;
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
     }
 
     .inactive-nav {
@@ -80,7 +80,7 @@ export const NavContainer = styled.div`
     }
 
     #topnav1 {
-      margin-left: 0;
+      margin-left: 0.2em;
       animation: 0.8s ${fadeDown};
     }
 
@@ -96,6 +96,7 @@ export const NavContainer = styled.div`
       margin-left: 0.5em;
       width: 1.5em;
       visibility: visible;
+      position: relative;
     }
 
     .icon {
