@@ -5,7 +5,6 @@ import { Carousel } from 'react-responsive-carousel'
 import radTrails from './assets/radtrails.png'
 import vago from './assets/vago_app.png'
 import weather from './assets/myWeather.png'
-import simon from './assets/simon_game.png'
 
 const portfolioSlides = [
   {
@@ -22,11 +21,6 @@ const portfolioSlides = [
     title: 'myWe@ther',
     url: 'http://www.myweather.xyz/',
     image: weather,
-  },
-  {
-    title: 'Simon',
-    url: 'https://simon-game-nmorgan.netlify.app/',
-    image: simon,
   },
 ]
 

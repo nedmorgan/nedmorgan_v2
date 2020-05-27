@@ -25,6 +25,10 @@ export const PortfolioContainer = styled.div`
     display: none;
   }
 
+  .control-arrow {
+    color: whitesmoke !important;
+  }
+
   .slider-wrapper {
     width: 50% !important;
   }
