@@ -5,6 +5,7 @@ import Logo from '../src/components/Logo'
 import Social from '../src/components/Social'
 import Modal from '../src/components/Modal'
 import About from '../src/components/About'
+import Portfolio from '../src/components/Portfolio'
 
 const isMobile = window.innerWidth < 600
 
@@ -17,11 +18,18 @@ export default class App extends Component {
       displayModal: false,
       displayAbout: false,
       displayEmailIcon: true,
+      displayPortfolio: true,
       validEmail: false,
       isMobile: false,
       hideLogo: false,
       contact: { name: '', email: '', comment: '' },
     }
+  }
+
+  componentDidMount = () => {
+    this.setState((state, props) => {
+      return { isMobile: isMobile }
+    })
   }
 
   toggleNav = (e) => {
@@ -35,6 +43,13 @@ export default class App extends Component {
     e.preventDefault()
     this.setState((state, props) => {
       return { displaySocial: !state.displaySocial }
+    })
+  }
+
+  togglePortfolio = (e) => {
+    e.preventDefault()
+    this.setState((state, props) => {
+      return { displayPortfolio: !state.displayPortfolio }
     })
   }
 
@@ -100,6 +115,7 @@ export default class App extends Component {
           toggleConnect={this.toggleConnect}
           toggleAbout={this.toggleAbout}
           toggleNav={this.toggleNav}
+          togglePortfolio={this.togglePortfolio}
           activeNav={this.state.activeNav}
           openModal={this.openModal}
           displayEmailIcon={this.state.displayEmailIcon}
@@ -121,6 +137,7 @@ export default class App extends Component {
           displayModal={this.state.displayModal}
           hideLogo={this.state.hideLogo}
         />
+        <Portfolio displayPortfolio={this.state.displayPortfolio} />
       </div>
     )
   }

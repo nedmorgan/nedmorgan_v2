@@ -30,6 +30,7 @@ export default class NavBar extends Component {
             <button
               className={this.props.activeNav ? 'nav-link-drop' : 'nav-link'}
               id={`topnav${MENU[1].id}`}
+              onClick={(e) => this.props.togglePortfolio(e)}
             >
               {MENU[1].title}
             </button>

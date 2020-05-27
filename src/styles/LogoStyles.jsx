@@ -8,8 +8,9 @@ export const LogoContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 80vh;
+  height: 70vh;
   animation: 1s ${fade};
+  position: absolute;
 
   .content-container {
     display: flex;

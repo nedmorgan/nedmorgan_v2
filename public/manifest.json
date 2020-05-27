@@ -11,6 +11,26 @@
       "src": "nepal.JPG",
       "type": "image/jpg",
       "sizes": "3072x1920"
+    },
+    {
+      "src": "myWeather.PNG",
+      "type": "image/png",
+      "sizes": "3072x1920"
+    },
+    {
+      "src": "radTrails.PNG",
+      "type": "image/png",
+      "sizes": "3072x1920"
+    },
+    {
+      "src": "simon_game.PNG",
+      "type": "image/png",
+      "sizes": "3072x1920"
+    },
+    {
+      "src": "vago_app.PNG",
+      "type": "image/png",
+      "sizes": "3072x1920"
     }
   ],
   "start_url": ".",

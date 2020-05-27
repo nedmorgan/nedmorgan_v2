@@ -35,6 +35,7 @@ export const AboutContainer = styled.div`
   h1,
   p {
     margin-bottom: 0;
+    font-family: 'Raleway', sans-serif;
   }
 
   p:last-of-type {
@@ -47,7 +48,7 @@ export const AboutContainer = styled.div`
     .active-about {
       border-radius: 5px;
       width: 75vw;
-      margin-top: 4em;
+      margin-top: 8.5em;
     }
 
     h1 {

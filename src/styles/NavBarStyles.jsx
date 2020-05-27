@@ -26,7 +26,7 @@ export const NavContainer = styled.div`
 
   button {
     color: whitesmoke;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-size: 1.5em;
     font-weight: bold;
     padding: 0.3em;
