@@ -34,6 +34,20 @@ export default class Portfolio extends Component {
               return (
                 <div key={i} className='slide-container'>
                   <img src={slide.image} alt={slide.title} />
+                  <div className='link-content'>
+                    <div className='text'>
+                      <a
+                        className='web-link'
+                        href={slide.url}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        tabIndex={i}
+                        title={slide.title}
+                      >
+                        Learn More!
+                      </a>
+                    </div>
+                  </div>
                 </div>
               )
             })}

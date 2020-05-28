@@ -49,7 +49,12 @@ export default class App extends Component {
   togglePortfolio = (e) => {
     e.preventDefault()
     this.setState((state, props) => {
-      return { displayPortfolio: !state.displayPortfolio }
+      return {
+        displayPortfolio: !state.displayPortfolio,
+        hideLogo: !state.hideLogo,
+        displayAbout: false,
+        displayModal: false,
+      }
     })
   }
 
@@ -60,6 +65,8 @@ export default class App extends Component {
         return {
           displayAbout: !state.displayAbout,
           hideLogo: !state.hideLogo,
+          displayModal: false,
+          displayPortfolio: false,
         }
       })
     } else {

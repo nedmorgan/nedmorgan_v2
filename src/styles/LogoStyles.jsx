@@ -9,12 +9,12 @@ export const LogoContainer = styled.div`
   align-items: center;
   width: 100%;
   height: 70vh;
-  animation: 1s ${fade};
   position: absolute;
 
   .content-container {
     display: flex;
     flex-direction: column;
+    animation: 1s ${fade};
   }
 
   p {
