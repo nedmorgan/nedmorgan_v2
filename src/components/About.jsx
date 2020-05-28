@@ -14,7 +14,7 @@ export default class About extends Component {
             onClick={(e) => this.props.toggleAbout(e)}
             className='fas fa-times close-icon'
           ></i>
-          <h1>About</h1>
+          <h1>About Me</h1>
           <p>
             Most people know me as a cyclist. Others know me as a bearded
             backpacker trying to navigate a bus schedule. My family knows me as

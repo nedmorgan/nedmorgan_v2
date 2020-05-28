@@ -18,7 +18,7 @@ export default class App extends Component {
       displayModal: false,
       displayAbout: false,
       displayEmailIcon: true,
-      displayPortfolio: true,
+      displayPortfolio: false,
       validEmail: false,
       isMobile: false,
       hideLogo: false,
@@ -32,6 +32,23 @@ export default class App extends Component {
     })
   }
 
+  checkLogo = () => {
+    let aboutActive = this.state.displayAbout
+    let portfolioActive = this.state.displayPortfolio
+    let hide = this.state.hideLogo
+    if (aboutActive === true || portfolioActive === true) {
+      hide = true
+      this.setState((state, props) => {
+        return { hideLogo: hide }
+      })
+    } else {
+      hide = false
+      this.setState((state, props) => {
+        return { hideLogo: hide }
+      })
+    }
+  }
+
   toggleNav = (e) => {
     e.preventDefault()
     this.setState((state, props) => {
@@ -42,7 +59,7 @@ export default class App extends Component {
   toggleConnect = (e) => {
     e.preventDefault()
     this.setState((state, props) => {
-      return { displaySocial: !state.displaySocial }
+      return { displaySocial: !state.displaySocial, activeNav: false }
     })
   }
 
@@ -51,11 +68,15 @@ export default class App extends Component {
     this.setState((state, props) => {
       return {
         displayPortfolio: !state.displayPortfolio,
-        hideLogo: !state.hideLogo,
         displayAbout: false,
         displayModal: false,
+        activeNav: false,
       }
     })
+    const timer = setTimeout(() => {
+      this.checkLogo()
+    }, 10)
+    return () => clearTimeout(timer)
   }
 
   toggleAbout = (e) => {
@@ -64,18 +85,27 @@ export default class App extends Component {
       this.setState((state, props) => {
         return {
           displayAbout: !state.displayAbout,
-          hideLogo: !state.hideLogo,
+          hideLogo: true,
           displayModal: false,
           displayPortfolio: false,
+          activeNav: false,
         }
       })
+      const timer = setTimeout(() => {
+        this.checkLogo()
+      }, 10)
+      return () => clearTimeout(timer)
     } else {
       this.setState((state, props) => {
         return {
           displayAbout: !state.displayAbout,
-          displayEmailIcon: !state.displayEmailIcon,
+          displayPortfolio: false,
         }
       })
+      const timer = setTimeout(() => {
+        this.checkLogo()
+      }, 10)
+      return () => clearTimeout(timer)
     }
   }
 
@@ -84,6 +114,7 @@ export default class App extends Component {
     this.setState((state, props) => {
       return {
         displayModal: true,
+        hideLogo: true,
         displaySocial: false,
         activeNav: false,
       }
@@ -92,7 +123,11 @@ export default class App extends Component {
 
   hideModal = (e) => {
     e.preventDefault()
-    this.setState({ displayModal: false })
+    this.setState({ displayModal: false, hideLogo: false })
+    const timer = setTimeout(() => {
+      this.checkLogo()
+    }, 10)
+    return () => clearTimeout(timer)
   }
 
   handleChange = (e) => {
@@ -131,6 +166,7 @@ export default class App extends Component {
         <About
           displayAbout={this.state.displayAbout}
           toggleAbout={this.toggleAbout}
+          isMobile={this.state.isMobile}
         />
         <Modal
           displayModal={this.state.displayModal}
@@ -144,7 +180,10 @@ export default class App extends Component {
           displayModal={this.state.displayModal}
           hideLogo={this.state.hideLogo}
         />
-        <Portfolio displayPortfolio={this.state.displayPortfolio} />
+        <Portfolio
+          displayPortfolio={this.state.displayPortfolio}
+          togglePortfolio={this.togglePortfolio}
+        />
       </div>
     )
   }

@@ -44,6 +44,7 @@ export const AboutContainer = styled.div`
 
   @media screen and (max-width: 600px) {
     justify-content: center;
+    z-index: 4;
 
     .active-about {
       border-radius: 5px;

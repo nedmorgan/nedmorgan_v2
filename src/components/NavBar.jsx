@@ -3,7 +3,7 @@ import Connect from './Connect'
 import { NavContainer } from '../styles/NavBarStyles'
 
 const MENU = [
-  { title: 'About', id: 1 },
+  { title: 'About Me', id: 1 },
   { title: 'Portfolio', id: 2 },
   { title: 'Connect', id: 3 },
 ]

@@ -116,16 +116,19 @@ export const ModalContainer = styled.div`
   }
 
   @media screen and (max-width: 600px) {
+    z-index: 3;
+    margin-top: 2em;
+
     .form-labels {
       display: flex;
       flex-direction: column;
-      margin-top: 0.25em;
+      margin-top: 1em;
     }
 
     .modal-main {
       width: 80%;
       height: 60%;
-      top: 35%;
+      top: 45%;
     }
 
     .form-inputs,

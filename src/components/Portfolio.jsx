@@ -29,6 +29,14 @@ export default class Portfolio extends Component {
     return (
       <PortfolioContainer>
         {this.props.displayPortfolio ? (
+          <div>
+            <i
+              onClick={(e) => this.props.togglePortfolio(e)}
+              className='far fa-times-circle close-icon'
+            ></i>
+          </div>
+        ) : null}
+        {this.props.displayPortfolio ? (
           <Carousel className='carousel-container'>
             {portfolioSlides.map((slide, i) => {
               return (
@@ -44,7 +52,7 @@ export default class Portfolio extends Component {
                         tabIndex={i}
                         title={slide.title}
                       >
-                        Learn More!
+                        Visit!
                       </a>
                     </div>
                   </div>

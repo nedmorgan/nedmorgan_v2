@@ -8,7 +8,9 @@ export const PortfolioContainer = styled.div`
   bottom: 0;
   margin: 0 auto;
   width: 100%;
-  padding-bottom: 2em;
+  padding-bottom: 5%;
+  display: flex;
+  flex-direction: column;
 
   .carousel-container {
     animation: 1s ${fade};
@@ -89,5 +91,40 @@ export const PortfolioContainer = styled.div`
   .web-link:hover {
     text-decoration: underline;
     font-weight: bold;
+  }
+
+  .close-icon {
+    color: whitesmoke;
+    font-size: 2em;
+    float: right;
+    padding-right: 22%;
+  }
+
+  .close-icon:hover {
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 600px) {
+    padding-bottom: 70%;
+
+    .close-icon {
+      padding-right: 2em;
+      padding-bottom: 0.5em;
+      font-size: 1.5em;
+    }
+
+    .carousel {
+      width: 75vw !important;
+    }
+
+    .web-link {
+      font-size: 1.25em;
+    }
+
+    .slide-container .link-content:hover .text {
+      opacity: 1;
+      transform: translateY(70px);
+      -webkit-transform: translateY(70px);
+    }
   }
 `

@@ -55,6 +55,7 @@ export const NavContainer = styled.div`
     width: 100vw;
     animation: 1s ${fadeDown};
     align-items: baseline;
+    z-index: 5;
 
     .active-nav {
       background-color: black;

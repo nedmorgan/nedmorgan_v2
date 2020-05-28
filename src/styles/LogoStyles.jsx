@@ -9,7 +9,6 @@ export const LogoContainer = styled.div`
   align-items: center;
   width: 100%;
   height: 70vh;
-  position: absolute;
 
   .content-container {
     display: flex;
@@ -46,11 +45,13 @@ export const LogoContainer = styled.div`
 
   .hidden {
     visibility: hidden;
+    z-index: 0;
     animation: 1s ${fade};
   }
 
   @media screen and (max-width: 600px) {
     height: 85vh;
+    z-index: 0;
 
     p {
       font-size: 2.5em;
