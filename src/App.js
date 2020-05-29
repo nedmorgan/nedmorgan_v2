@@ -36,7 +36,12 @@ export default class App extends Component {
     let aboutActive = this.state.displayAbout
     let portfolioActive = this.state.displayPortfolio
     let hide = this.state.hideLogo
-    if (aboutActive === true || portfolioActive === true) {
+    if (isMobile === false && aboutActive === true) {
+      hide = false
+      this.setState((state, props) => {
+        return { hideLogo: hide }
+      })
+    } else if (aboutActive === true || portfolioActive === true) {
       hide = true
       this.setState((state, props) => {
         return { hideLogo: hide }
@@ -75,7 +80,7 @@ export default class App extends Component {
     })
     const timer = setTimeout(() => {
       this.checkLogo()
-    }, 10)
+    }, 20)
     return () => clearTimeout(timer)
   }
 
@@ -93,7 +98,7 @@ export default class App extends Component {
       })
       const timer = setTimeout(() => {
         this.checkLogo()
-      }, 10)
+      }, 20)
       return () => clearTimeout(timer)
     } else {
       this.setState((state, props) => {
@@ -104,7 +109,7 @@ export default class App extends Component {
       })
       const timer = setTimeout(() => {
         this.checkLogo()
-      }, 10)
+      }, 20)
       return () => clearTimeout(timer)
     }
   }
@@ -126,7 +131,7 @@ export default class App extends Component {
     this.setState({ displayModal: false, hideLogo: false })
     const timer = setTimeout(() => {
       this.checkLogo()
-    }, 10)
+    }, 20)
     return () => clearTimeout(timer)
   }
 

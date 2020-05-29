@@ -10,7 +10,7 @@ export const AboutContainer = styled.div`
   .active-about {
     position: absolute;
     height: auto;
-    width: 35em;
+    width: 30em;
     background-color: whitesmoke;
     opacity: 0.7;
     margin-top: 2em;
