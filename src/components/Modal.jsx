@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { ModalContainer } from '../styles/ModalStyles'
+const AWS = require('aws-sdk')
+const dotenv = require('dotenv')
 
 const ModalBox = ({ handleClose, show, children }) => {
   const showHideClassName = show ? 'modal display-block' : 'modal display-none'
