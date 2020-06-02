@@ -20,23 +20,26 @@ export default class App extends Component {
       displayEmailIcon: true,
       displayPortfolio: false,
       validEmail: false,
+      emailSuccess: false,
       isMobile: false,
       hideLogo: false,
       contact: { name: '', email: '', comment: '' },
     }
   }
 
+  // Checking is user is in a mobile device
   componentDidMount = () => {
     this.setState((state, props) => {
       return { isMobile: isMobile }
     })
   }
 
+  // Function to check is the logo needs to be displayed
   checkLogo = () => {
     let aboutActive = this.state.displayAbout
     let portfolioActive = this.state.displayPortfolio
     let hide = this.state.hideLogo
-    if (isMobile === false && aboutActive === true) {
+    if (!isMobile && aboutActive === true) {
       hide = false
       this.setState((state, props) => {
         return { hideLogo: hide }
@@ -54,6 +57,7 @@ export default class App extends Component {
     }
   }
 
+  // Function to toggle the nav bar
   toggleNav = (e) => {
     e.preventDefault()
     this.setState((state, props) => {
@@ -61,6 +65,7 @@ export default class App extends Component {
     })
   }
 
+  // Function to toggle the Connect component
   toggleConnect = (e) => {
     e.preventDefault()
     this.setState((state, props) => {
@@ -68,6 +73,7 @@ export default class App extends Component {
     })
   }
 
+  // Function to toggle the Portfolio carousel
   togglePortfolio = (e) => {
     e.preventDefault()
     this.setState((state, props) => {
@@ -84,6 +90,7 @@ export default class App extends Component {
     return () => clearTimeout(timer)
   }
 
+  // Function to toggle the About component
   toggleAbout = (e) => {
     e.preventDefault()
     if (isMobile === true) {
@@ -114,6 +121,7 @@ export default class App extends Component {
     }
   }
 
+  // Function to open the email modal
   openModal = (e) => {
     e.preventDefault()
     this.setState((state, props) => {
@@ -126,15 +134,17 @@ export default class App extends Component {
     })
   }
 
+  // Function to hide the modal
   hideModal = (e) => {
     e.preventDefault()
-    this.setState({ displayModal: false, hideLogo: false })
+    this.setState({ displayModal: false, hideLogo: false, emailSuccess: false })
     const timer = setTimeout(() => {
       this.checkLogo()
     }, 20)
     return () => clearTimeout(timer)
   }
 
+  // Handle change function for the email contact form
   handleChange = (e) => {
     const target = e.target
     const value = target.value
@@ -144,11 +154,21 @@ export default class App extends Component {
     this.setState({ contact: updatedContact })
   }
 
+  // Clearing state after an e-mail has been sucessfully sent
+  clearEmailState = (success) => {
+    let contactInfo = this.state.contact
+    contactInfo = {}
+    this.setState((state, props) => {
+      return { contact: contactInfo, emailSuccess: success }
+    })
+  }
+
+  // Function to validate an email address
   validateEmail = (e, email) => {
     e.preventDefault()
     const regEx = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     let validEmail = regEx.test(String(email).toLowerCase())
-    if (validEmail === false) {
+    if (!validEmail) {
       this.setState({ validEmail: false })
     } else {
       this.setState({ validEmail: true })
@@ -180,6 +200,9 @@ export default class App extends Component {
           hideModal={this.hideModal}
           validateEmail={this.validateEmail}
           validEmail={this.state.validEmail}
+          hideModal={this.hideModal}
+          clearEmailState={this.clearEmailState}
+          emailSuccess={this.state.emailSuccess}
         />
         <Logo
           displayModal={this.state.displayModal}
