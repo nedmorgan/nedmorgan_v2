@@ -78,9 +78,20 @@ export const ModalContainer = styled.div`
     width: 50%;
   }
 
+  .invalid-email-text {
+    color: red;
+    font-size: 0.25em;
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 0;
+  }
+
   .comment-box {
     width: 50%;
     resize: none;
+  }
+
+  .button-div {
+    text-align: center;
   }
 
   .submit-button {
@@ -107,12 +118,39 @@ export const ModalContainer = styled.div`
       0 17px 50px 0 rgba(0, 0, 0, 0.19);
   }
 
-  .invisible-button {
+  .invisible {
     visibility: hidden;
   }
 
-  .visible-button {
+  .visible {
     visibility: visible;
+  }
+
+  .success-text {
+    text-align: center;
+    color: green;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    animation: 0.5s ${fade};
+    margin: 0;
+  }
+
+  .hide-success-text {
+    visibility: hidden;
+  }
+
+  .invalid-form-text {
+    text-align: center;
+    color: red;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    animation: 0.5s ${fade};
+    margin: 0;
+    margin-bottom: 0.5em;
+  }
+
+  .hide-invalid-form-text {
+    visibility: hidden;
   }
 
   @media screen and (max-width: 600px) {
@@ -122,12 +160,12 @@ export const ModalContainer = styled.div`
     .form-labels {
       display: flex;
       flex-direction: column;
-      margin-top: 1em;
+      margin-top: 0.75em;
     }
 
     .modal-main {
       width: 80%;
-      height: 60%;
+      height: 70%;
       top: 45%;
     }
 
@@ -138,8 +176,10 @@ export const ModalContainer = styled.div`
     }
 
     .submit-button {
-      width: 21%;
+      width: 25%;
       margin-left: 0.5em;
+      margin: 0 auto;
+      margin-top: 1em;
     }
   }
 `

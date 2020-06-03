@@ -6,6 +6,10 @@ import Social from '../src/components/Social'
 import Modal from '../src/components/Modal'
 import About from '../src/components/About'
 import Portfolio from '../src/components/Portfolio'
+const axios = require('axios')
+
+// API Endpoint
+const api_endpoint = process.env.REACT_APP_API_ENDPOINT
 
 const isMobile = window.innerWidth < 600
 
@@ -19,7 +23,8 @@ export default class App extends Component {
       displayAbout: false,
       displayEmailIcon: true,
       displayPortfolio: false,
-      validEmail: false,
+      validForm: false,
+      showInvalidFormText: false,
       emailSuccess: false,
       isMobile: false,
       hideLogo: false,
@@ -154,6 +159,30 @@ export default class App extends Component {
     this.setState({ contact: updatedContact })
   }
 
+  // Function to send email
+  sendMail = () => {
+    let didEmailSucceed = this.state.emailSuccess
+    let subjectData = `${this.state.contact.name} (${this.state.contact.email}) is Reaching Out from your website!`
+    let messageData = this.state.contact.comment
+    axios
+      .post(`${api_endpoint}`, {
+        subject: subjectData,
+        message: messageData,
+      })
+      .then((res) => {
+        console.log(`Response: ${res}`)
+        didEmailSucceed = true
+        this.props.clearEmailState(didEmailSucceed)
+        const timer = setTimeout(() => {
+          this.props.hideModal()
+        }, 1500)
+        return () => clearTimeout(timer)
+      })
+      .catch((error) => {
+        console.log(`Error: ${error}`)
+      })
+  }
+
   // Clearing state after an e-mail has been sucessfully sent
   clearEmailState = (success) => {
     let contactInfo = this.state.contact
@@ -163,15 +192,28 @@ export default class App extends Component {
     })
   }
 
+  // Validate content on form
+  validateFormContent = (e, formName, formComment) => {
+    e.preventDefault()
+    if (formName.length === 0 && formComment === 0) {
+      this.setState((state, props) => {
+        return { showInvalidFormText: true }
+      })
+    } else {
+      this.setState({ showInvalidFormText: false })
+      this.sendMail()
+    }
+  }
+
   // Function to validate an email address
   validateEmail = (e, email) => {
     e.preventDefault()
     const regEx = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     let validEmail = regEx.test(String(email).toLowerCase())
     if (!validEmail) {
-      this.setState({ validEmail: false })
+      this.setState({ validForm: false })
     } else {
-      this.setState({ validEmail: true })
+      this.setState({ validForm: true })
     }
   }
 
@@ -195,14 +237,15 @@ export default class App extends Component {
         />
         <Modal
           displayModal={this.state.displayModal}
+          hideModal={this.hideModal}
           handleChange={this.handleChange}
           contact={this.state.contact}
-          hideModal={this.hideModal}
           validateEmail={this.validateEmail}
-          validEmail={this.state.validEmail}
-          hideModal={this.hideModal}
           clearEmailState={this.clearEmailState}
           emailSuccess={this.state.emailSuccess}
+          validForm={this.state.validForm}
+          validateFormContent={this.validateFormContent}
+          showInvalidFormText={this.state.showInvalidFormText}
         />
         <Logo
           displayModal={this.state.displayModal}
