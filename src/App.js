@@ -11,6 +11,7 @@ const axios = require('axios')
 // API Endpoint
 const api_endpoint = process.env.REACT_APP_API_ENDPOINT
 
+// Variable to check is site is on mobile device
 const isMobile = window.innerWidth < 600
 
 export default class App extends Component {
@@ -24,7 +25,6 @@ export default class App extends Component {
       displayEmailIcon: true,
       displayPortfolio: false,
       displayErrorEmailText: false,
-      validForm: false,
       showInvalidFormText: false,
       emailSuccess: false,
       isMobile: false,
@@ -45,12 +45,12 @@ export default class App extends Component {
     let aboutActive = this.state.displayAbout
     let portfolioActive = this.state.displayPortfolio
     let hide = this.state.hideLogo
-    if (!isMobile && aboutActive === true) {
+    if (!isMobile && aboutActive) {
       hide = false
       this.setState((state, props) => {
         return { hideLogo: hide }
       })
-    } else if (aboutActive === true || portfolioActive === true) {
+    } else if (aboutActive || portfolioActive) {
       hide = true
       this.setState((state, props) => {
         return { hideLogo: hide }
@@ -99,7 +99,7 @@ export default class App extends Component {
   // Function to toggle the About component
   toggleAbout = (e) => {
     e.preventDefault()
-    if (isMobile === true) {
+    if (isMobile) {
       this.setState((state, props) => {
         return {
           displayAbout: !state.displayAbout,
@@ -240,7 +240,6 @@ export default class App extends Component {
         <About
           displayAbout={this.state.displayAbout}
           toggleAbout={this.toggleAbout}
-          isMobile={this.state.isMobile}
         />
         <Modal
           displayModal={this.state.displayModal}
@@ -248,9 +247,7 @@ export default class App extends Component {
           handleChange={this.handleChange}
           contact={this.state.contact}
           validateEmail={this.validateEmail}
-          clearEmailState={this.clearEmailState}
           emailSuccess={this.state.emailSuccess}
-          validForm={this.state.validForm}
           validateFormContent={this.validateFormContent}
           showInvalidFormText={this.state.showInvalidFormText}
           displayErrorEmailText={this.state.displayErrorEmailText}

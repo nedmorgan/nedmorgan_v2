@@ -102,7 +102,7 @@ export default class Modal extends Component {
                     : 'hide-invalid-form-text'
                 }
               >
-                Please complete all fields of form
+                Please complete all fields of the form
               </p>
             </div>
           </ModalBox>
