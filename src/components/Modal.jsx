@@ -52,9 +52,9 @@ export default class Modal extends Component {
                 />
                 <p
                   className={
-                    this.props.validForm
-                      ? 'invisible invalid-email-text'
-                      : 'visible invalid-email-text'
+                    this.props.displayErrorEmailText
+                      ? 'visible invalid-email-text'
+                      : 'invisible invalid-email-text'
                   }
                 >
                   Please enter a valid email address
@@ -73,11 +73,7 @@ export default class Modal extends Component {
               </label>
               <div className='button-div'>
                 <button
-                  className={
-                    this.props.validForm
-                      ? 'visible submit-button'
-                      : 'invisible submit-button'
-                  }
+                  className='submit-button'
                   type='submit'
                   onClick={(e) =>
                     this.validateFormContent(

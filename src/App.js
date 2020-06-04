@@ -23,6 +23,7 @@ export default class App extends Component {
       displayAbout: false,
       displayEmailIcon: true,
       displayPortfolio: false,
+      displayErrorEmailText: false,
       validForm: false,
       showInvalidFormText: false,
       emailSuccess: false,
@@ -172,9 +173,9 @@ export default class App extends Component {
       .then((res) => {
         console.log(`Response: ${res}`)
         didEmailSucceed = true
-        this.props.clearEmailState(didEmailSucceed)
+        this.clearEmailState(didEmailSucceed)
         const timer = setTimeout(() => {
-          this.props.hideModal()
+          this.hideModal()
         }, 1500)
         return () => clearTimeout(timer)
       })
@@ -195,12 +196,18 @@ export default class App extends Component {
   // Validate content on form
   validateFormContent = (e, formName, formComment) => {
     e.preventDefault()
-    if (formName.length === 0 && formComment === 0) {
+    if (
+      formName.length === 0 &&
+      formComment.length === 0 &&
+      this.state.displayErrorEmailText === true
+    ) {
       this.setState((state, props) => {
         return { showInvalidFormText: true }
       })
     } else {
-      this.setState({ showInvalidFormText: false })
+      this.setState((state, props) => {
+        return { showInvalidFormText: false }
+      })
       this.sendMail()
     }
   }
@@ -211,9 +218,9 @@ export default class App extends Component {
     const regEx = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     let validEmail = regEx.test(String(email).toLowerCase())
     if (!validEmail) {
-      this.setState({ validForm: false })
+      this.setState({ displayErrorEmailText: true })
     } else {
-      this.setState({ validForm: true })
+      this.setState({ displayErrorEmailText: false })
     }
   }
 
@@ -246,6 +253,7 @@ export default class App extends Component {
           validForm={this.state.validForm}
           validateFormContent={this.validateFormContent}
           showInvalidFormText={this.state.showInvalidFormText}
+          displayErrorEmailText={this.state.displayErrorEmailText}
         />
         <Logo
           displayModal={this.state.displayModal}

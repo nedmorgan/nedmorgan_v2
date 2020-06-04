@@ -118,14 +118,6 @@ export const ModalContainer = styled.div`
       0 17px 50px 0 rgba(0, 0, 0, 0.19);
   }
 
-  .invisible {
-    visibility: hidden;
-  }
-
-  .visible {
-    visibility: visible;
-  }
-
   .success-text {
     text-align: center;
     color: green;
@@ -135,8 +127,10 @@ export const ModalContainer = styled.div`
     margin: 0;
   }
 
-  .hide-success-text {
+  .hide-success-text,
+  .hide-invalid-form-text {
     visibility: hidden;
+    margin: 0;
   }
 
   .invalid-form-text {
@@ -149,13 +143,21 @@ export const ModalContainer = styled.div`
     margin-bottom: 0.5em;
   }
 
-  .hide-invalid-form-text {
+  .visible {
+    visibility: visible;
+  }
+
+  .invisible {
     visibility: hidden;
   }
 
   @media screen and (max-width: 600px) {
     z-index: 3;
     margin-top: 2em;
+
+    .close-button {
+      padding-top: 0.25em;
+    }
 
     .form-labels {
       display: flex;
