@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { AboutContainer } from '../styles/AboutStyles'
+import headshot from './assets/ned.jpg'
 
 export default class About extends Component {
   render() {
@@ -15,6 +16,9 @@ export default class About extends Component {
             className='fas fa-times close-icon'
           ></i>
           <h1>About Me</h1>
+          <div className='image-container'>
+            <img className='headshot' src={headshot} alt="Ned's headshot" />
+          </div>
           <p>
             Most people know me as a cyclist. Others know me as a bearded
             backpacker trying to navigate a bus schedule. My family knows me as

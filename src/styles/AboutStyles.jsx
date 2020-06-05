@@ -32,6 +32,21 @@ export const AboutContainer = styled.div`
     visibility: hidden;
   }
 
+  .image-container {
+    float: left;
+    width: 200px;
+  }
+
+  .headshot {
+    border-radius: 50%;
+    width: 197px;
+    height: 146px;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
   h1,
   p {
     margin-bottom: 0;
@@ -46,19 +61,29 @@ export const AboutContainer = styled.div`
     justify-content: center;
     z-index: 4;
 
+    .image-container {
+      width: 170px;
+    }
+
+    .headshot {
+      width: 166px;
+      height: 119px;
+    }
+
     .active-about {
       border-radius: 5px;
       width: 75vw;
-      margin-top: 8.5em;
+      margin-top: 4.85em;
     }
 
     h1 {
-      font-size: 1.25em;
+      font-size: 1.15em;
       margin-top: 0.5em;
+      margin-bottom: 0.25em;
     }
 
     p {
-      font-size: 0.85em;
+      font-size: 0.75em;
     }
 
     p:first-of-type {

@@ -25,6 +25,7 @@ export default class App extends Component {
       displayEmailIcon: true,
       displayPortfolio: false,
       displayErrorEmailText: false,
+      isValidEmail: false,
       showInvalidFormText: false,
       emailSuccess: false,
       isMobile: false,
@@ -141,8 +142,7 @@ export default class App extends Component {
   }
 
   // Function to hide the modal
-  hideModal = (e) => {
-    e.preventDefault()
+  hideModal = () => {
     this.setState({ displayModal: false, hideLogo: false, emailSuccess: false })
     const timer = setTimeout(() => {
       this.checkLogo()
@@ -187,7 +187,7 @@ export default class App extends Component {
   // Clearing state after an e-mail has been sucessfully sent
   clearEmailState = (success) => {
     let contactInfo = this.state.contact
-    contactInfo = {}
+    contactInfo = { name: '', email: '', comment: '' }
     this.setState((state, props) => {
       return { contact: contactInfo, emailSuccess: success }
     })
@@ -196,11 +196,7 @@ export default class App extends Component {
   // Validate content on form
   validateFormContent = (e, formName, formComment) => {
     e.preventDefault()
-    if (
-      formName.length === 0 &&
-      formComment.length === 0 &&
-      this.state.displayErrorEmailText === true
-    ) {
+    if (formName.length === 0 || formComment.length === 0) {
       this.setState((state, props) => {
         return { showInvalidFormText: true }
       })
@@ -218,9 +214,9 @@ export default class App extends Component {
     const regEx = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     let validEmail = regEx.test(String(email).toLowerCase())
     if (!validEmail) {
-      this.setState({ displayErrorEmailText: true })
+      this.setState({ displayErrorEmailText: true, isValidEmail: false })
     } else {
-      this.setState({ displayErrorEmailText: false })
+      this.setState({ displayErrorEmailText: false, isValidEmail: true })
     }
   }
 
@@ -251,6 +247,7 @@ export default class App extends Component {
           validateFormContent={this.validateFormContent}
           showInvalidFormText={this.state.showInvalidFormText}
           displayErrorEmailText={this.state.displayErrorEmailText}
+          isValidEmail={this.state.isValidEmail}
         />
         <Logo
           displayModal={this.state.displayModal}

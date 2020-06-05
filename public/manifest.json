@@ -26,6 +26,11 @@
       "src": "vago_app.PNG",
       "type": "image/png",
       "sizes": "3072x1920"
+    },
+    {
+      "src": "ned.JPG",
+      "type": "image/jpg",
+      "sizes": "5184×3456"
     }
   ],
   "start_url": ".",

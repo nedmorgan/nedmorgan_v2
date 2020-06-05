@@ -73,10 +73,14 @@ export default class Modal extends Component {
               </label>
               <div className='button-div'>
                 <button
-                  className='submit-button'
+                  className={
+                    this.props.isValidEmail
+                      ? 'visible submit-button'
+                      : 'invisible submit-button'
+                  }
                   type='submit'
                   onClick={(e) =>
-                    this.validateFormContent(
+                    this.props.validateFormContent(
                       e,
                       this.props.contact.name,
                       this.props.contact.comment
