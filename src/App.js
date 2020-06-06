@@ -46,12 +46,12 @@ export default class App extends Component {
     let aboutActive = this.state.displayAbout
     let portfolioActive = this.state.displayPortfolio
     let hide = this.state.hideLogo
-    if (!isMobile && aboutActive) {
+    if (!isMobile && aboutActive === true) {
       hide = false
       this.setState((state, props) => {
         return { hideLogo: hide }
       })
-    } else if (aboutActive || portfolioActive) {
+    } else if (aboutActive === true || portfolioActive === true) {
       hide = true
       this.setState((state, props) => {
         return { hideLogo: hide }
@@ -100,7 +100,7 @@ export default class App extends Component {
   // Function to toggle the About component
   toggleAbout = (e) => {
     e.preventDefault()
-    if (isMobile) {
+    if (isMobile === true) {
       this.setState((state, props) => {
         return {
           displayAbout: !state.displayAbout,

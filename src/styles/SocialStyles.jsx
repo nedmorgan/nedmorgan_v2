@@ -47,9 +47,14 @@ export const SocialContainer = styled.div`
 
   @media screen and (max-width: 600px) {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     height: 100vh;
     position: absolute;
+    margin-top: 30%;
+
+    .active-social {
+      margin-top: 0;
+    }
 
     .social-icon {
       padding-top: 0.7em;

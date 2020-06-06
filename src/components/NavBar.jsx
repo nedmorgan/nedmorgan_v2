@@ -12,8 +12,9 @@ export default class NavBar extends Component {
   render() {
     return (
       <NavContainer>
-        <div className='nav-div'>
+        <nav role='navigation' className='nav-div'>
           <button
+            aria-label='Mobile Navigation Button'
             onClick={(e) => this.props.toggleNav(e)}
             className='icon-link'
           >
@@ -42,7 +43,7 @@ export default class NavBar extends Component {
               {MENU[2].title}
             </button>
           </div>
-        </div>
+        </nav>
         <Connect
           displayEmailIcon={this.props.displayEmailIcon}
           openModal={this.props.openModal}

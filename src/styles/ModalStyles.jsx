@@ -20,6 +20,9 @@ export const ModalContainer = styled.div`
     border: none;
     float: right;
     font-size: 1.5em;
+    position: absolute;
+    right: 0;
+    margin: 0.25em;
   }
 
   .close-button:hover {
@@ -58,24 +61,28 @@ export const ModalContainer = styled.div`
   }
 
   .form-labels {
-    font-family: 'Raleway', sans-serif;
-    font-size: 1.25em;
-    margin-left: 1em;
+    margin: 0 auto;
+    width: 75%;
   }
 
   .form-inputs,
   .comment-box {
-    border-radius: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
     font-family: 'Raleway', sans-serif;
-    font-size: 0.75em;
+    font-size: 1em;
     padding: 0.5em;
-    margin-left: 1em;
-    margin-top: 1em;
     border: black;
   }
 
   .form-inputs {
-    width: 50%;
+    width: 98%;
+    margin-top: 1em;
+  }
+
+  .comment-box {
+    width: 98%;
+    resize: none;
   }
 
   .invalid-email-text {
@@ -85,24 +92,23 @@ export const ModalContainer = styled.div`
     margin-bottom: 0;
   }
 
-  .comment-box {
-    width: 50%;
-    resize: none;
-  }
-
   .button-div {
     text-align: center;
+    display: flex;
+    justify-content: center;
   }
 
   .submit-button {
+    appearance: none;
+    -webkit-appearance: none;
     color: black;
     font-size: 1em;
-    width: 15%;
+    width: 75%;
+    padding: 0.25em;
     margin-bottom: 1em;
-    margin-left: 1.5em;
+    margin: 0 auto;
     margin-top: 1em;
-    border: 2px solid black;
-    border-radius: 5px;
+    border-radius: 10px;
     font-family: 'Raleway', sans-serif;
     -webkit-transition-duration: 0.2s; /* Safari */
     transition-duration: 0.2s;
@@ -112,7 +118,7 @@ export const ModalContainer = styled.div`
   .submit-button:hover {
     color: whitesmoke;
     font-weight: bold;
-    background-color: black;
+    background-color: rgba(50, 87, 168, 0.9);
     cursor: pointer;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
       0 17px 50px 0 rgba(0, 0, 0, 0.19);
@@ -165,20 +171,32 @@ export const ModalContainer = styled.div`
       margin-top: 0.75em;
     }
 
+    .form-labels:last-of-type {
+      margin-top: 0;
+      max-height: 200px;
+      min-height: 50px;
+    }
+
     .modal-main {
       width: 80%;
       height: 70%;
       top: 45%;
     }
 
+    .comment-box {
+      resize: vertical;
+      max-height: 90%;
+    }
+
     .form-inputs,
     .comment-box {
-      width: 75%;
       margin-top: 0.25em;
+      margin-left: 0;
+      font-size: 0.85em;
     }
 
     .submit-button {
-      width: 25%;
+      width: 75%;
       margin-left: 0.5em;
       margin: 0 auto;
       margin-top: 1em;

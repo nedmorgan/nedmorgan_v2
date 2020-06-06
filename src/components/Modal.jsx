@@ -28,24 +28,26 @@ export default class Modal extends Component {
           >
             <h1>Let's Connect!</h1>
             <form>
-              <label className='form-labels'>
-                Name:
+              <label htmlFor='name' className='form-labels'>
                 <input
                   onChange={this.props.handleChange}
                   value={this.props.contact.name}
                   className='form-inputs'
                   type='text'
                   name='name'
+                  placeholder='Name'
+                  required
                 />
               </label>
-              <label className='form-labels'>
-                E-mail:
+              <label htmlFor='email' className='form-labels'>
                 <input
                   onChange={this.props.handleChange}
                   value={this.props.contact.email}
                   className='form-inputs'
                   type='text'
                   name='email'
+                  placeholder='E-mail'
+                  required
                   onBlur={(e) =>
                     this.props.validateEmail(e, this.props.contact.email)
                   }
@@ -60,15 +62,16 @@ export default class Modal extends Component {
                   Please enter a valid email address
                 </p>
               </label>
-              <label className='form-labels'>
-                Message:
+              <label htmlFor='comment' className='form-labels'>
                 <textarea
                   onChange={this.props.handleChange}
                   value={this.props.contact.comment}
                   className='comment-box'
                   type='text'
                   name='comment'
-                  rows='5'
+                  rows='6'
+                  placeholder='Message...'
+                  required
                 />
               </label>
               <div className='button-div'>
@@ -87,7 +90,7 @@ export default class Modal extends Component {
                     )
                   }
                 >
-                  Submit
+                  SEND MESSAGE
                 </button>
               </div>
             </form>

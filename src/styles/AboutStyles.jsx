@@ -12,7 +12,7 @@ export const AboutContainer = styled.div`
     height: auto;
     width: 30em;
     background-color: whitesmoke;
-    opacity: 0.7;
+    opacity: 0.9;
     margin-top: 2em;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
