@@ -28,7 +28,7 @@ export const LogoContainer = styled.div`
     background: whitesmoke;
     opacity: 0.7;
     padding-left: 0.5em;
-    padding-right: 0.5em;
+    padding-right: 0.3em;
   }
 
   p:first-child {

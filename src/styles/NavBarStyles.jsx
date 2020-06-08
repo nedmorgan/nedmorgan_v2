@@ -90,6 +90,7 @@ export const NavContainer = styled.div`
     }
 
     #topnav3 {
+      padding-bottom: 0.5em;
       animation: 1.2s ${fadeDown};
     }
 
