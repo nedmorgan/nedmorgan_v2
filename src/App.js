@@ -9,7 +9,7 @@ import Portfolio from '../src/components/Portfolio'
 const axios = require('axios')
 
 // API Endpoint
-const api_endpoint = process.env.REACT_APP_API_ENDPOINT
+const api_endpoint = 'https://8hb7niq8e4.execute-api.us-east-1.amazonaws.com/Prod/send'
 
 // Variable to check is site is on mobile device
 const isMobile = window.innerWidth < 600
@@ -171,12 +171,11 @@ export default class App extends Component {
         message: messageData,
       })
       .then((res) => {
-        console.log(`Response: ${res}`)
         didEmailSucceed = true
         this.clearEmailState(didEmailSucceed)
         const timer = setTimeout(() => {
           this.hideModal()
-        }, 1500)
+        }, 2500)
         return () => clearTimeout(timer)
       })
       .catch((error) => {
@@ -233,10 +232,7 @@ export default class App extends Component {
           displayEmailIcon={this.state.displayEmailIcon}
         />
         <Social displaySocial={this.state.displaySocial} />
-        <About
-          displayAbout={this.state.displayAbout}
-          toggleAbout={this.toggleAbout}
-        />
+        <About displayAbout={this.state.displayAbout} toggleAbout={this.toggleAbout} />
         <Modal
           displayModal={this.state.displayModal}
           hideModal={this.hideModal}
@@ -249,14 +245,8 @@ export default class App extends Component {
           displayErrorEmailText={this.state.displayErrorEmailText}
           isValidEmail={this.state.isValidEmail}
         />
-        <Logo
-          displayModal={this.state.displayModal}
-          hideLogo={this.state.hideLogo}
-        />
-        <Portfolio
-          displayPortfolio={this.state.displayPortfolio}
-          togglePortfolio={this.togglePortfolio}
-        />
+        <Logo displayModal={this.state.displayModal} hideLogo={this.state.hideLogo} />
+        <Portfolio displayPortfolio={this.state.displayPortfolio} togglePortfolio={this.togglePortfolio} />
       </div>
     )
   }
