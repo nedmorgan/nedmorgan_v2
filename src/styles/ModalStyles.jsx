@@ -120,8 +120,7 @@ export const ModalContainer = styled.div`
     font-weight: bold;
     background-color: rgba(50, 87, 168, 0.9);
     cursor: pointer;
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-      0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
   }
 
   .success-text {
@@ -165,6 +164,10 @@ export const ModalContainer = styled.div`
       padding-top: 0.25em;
     }
 
+    .button-div {
+      padding-left: 0.5em;
+    }
+
     .form-labels {
       display: flex;
       flex-direction: column;
@@ -179,8 +182,8 @@ export const ModalContainer = styled.div`
 
     .modal-main {
       width: 80%;
-      height: 70%;
-      top: 45%;
+      height: 65%;
+      top: 40%;
     }
 
     .comment-box {
@@ -199,7 +202,8 @@ export const ModalContainer = styled.div`
       width: 75%;
       margin-left: 0.5em;
       margin: 0 auto;
-      margin-top: 1em;
+      margin-top: 0.35em;
+      z-index: 10;
     }
   }
 `
