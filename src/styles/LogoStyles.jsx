@@ -8,7 +8,7 @@ export const LogoContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 70vh;
+  height: 75vh;
 
   .content-container {
     display: flex;
@@ -50,7 +50,7 @@ export const LogoContainer = styled.div`
   }
 
   @media screen and (max-width: 600px) {
-    height: 85vh;
+    height: 80vh;
     z-index: 0;
 
     p {
