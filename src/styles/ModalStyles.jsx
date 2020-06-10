@@ -120,7 +120,8 @@ export const ModalContainer = styled.div`
     font-weight: bold;
     background-color: rgba(50, 87, 168, 0.9);
     cursor: pointer;
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+      0 17px 50px 0 rgba(0, 0, 0, 0.19);
   }
 
   .success-text {
@@ -182,7 +183,7 @@ export const ModalContainer = styled.div`
 
     .modal-main {
       width: 80%;
-      height: 65%;
+      height: 63%;
       top: 40%;
     }
 
