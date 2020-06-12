@@ -167,6 +167,11 @@ export const ModalContainer = styled.div`
 
     .button-div {
       padding-left: 0.5em;
+      z-index: 9;
+    }
+
+    form {
+      z-index: 8;
     }
 
     .form-labels {
@@ -184,7 +189,8 @@ export const ModalContainer = styled.div`
     .modal-main {
       width: 80%;
       height: 63%;
-      top: 40%;
+      top: 39%;
+      z-index: 7;
     }
 
     .comment-box {

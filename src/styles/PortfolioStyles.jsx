@@ -105,8 +105,7 @@ export const PortfolioContainer = styled.div`
   }
 
   @media screen and (max-width: 600px) {
-    padding-bottom: 55%;
-    margin-bottom: 10%;
+    padding-bottom: 60%;
 
     .close-icon {
       padding-right: 2em;
