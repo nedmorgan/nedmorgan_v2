@@ -1,6 +1,6 @@
 .App {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('./media/nepal.JPG');
+    url('https://nedmorgan-static.s3.us-east-2.amazonaws.com/nepal.JPG');
   background-size: 100vw 100vh;
   min-height: 100vh;
   background-repeat: no-repeat;

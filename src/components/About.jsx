@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { AboutContainer } from '../styles/AboutStyles'
-import headshot from './assets/ned.jpg'
 
 export default class About extends Component {
   render() {
@@ -17,7 +16,11 @@ export default class About extends Component {
           ></i>
           <h1>About Me</h1>
           <div className='image-container'>
-            <img className='headshot' src={headshot} alt="Ned's headshot" />
+            <img
+              className='headshot'
+              src='https://nedmorgan-static.s3.us-east-2.amazonaws.com/ned.jpg'
+              alt="Ned's headshot"
+            />
           </div>
           <p>
             Most people know me as a cyclist. Others know me as a bearded

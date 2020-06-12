@@ -2,25 +2,22 @@ import React, { Component } from 'react'
 import { PortfolioContainer } from '../styles/PortfolioStyles'
 import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
 import { Carousel } from 'react-responsive-carousel'
-import radTrails from './assets/radtrails.png'
-import vago from './assets/vago_app.png'
-import weather from './assets/myWeather.png'
 
 const portfolioSlides = [
   {
     title: 'radTrails',
     url: 'https://rad-trails.herokuapp.com/',
-    image: radTrails,
+    image: 'https://nedmorgan-static.s3.us-east-2.amazonaws.com/radtrails.png',
   },
   {
     title: 'Vago',
     url: 'https://vago-travel.herokuapp.com/',
-    image: vago,
+    image: 'https://nedmorgan-static.s3.us-east-2.amazonaws.com/vago_app.png',
   },
   {
     title: 'myWe@ther',
     url: 'http://www.myweather.xyz/',
-    image: weather,
+    image: 'https://nedmorgan-static.s3.us-east-2.amazonaws.com/myWeather.png',
   },
 ]
 
