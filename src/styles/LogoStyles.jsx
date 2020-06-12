@@ -44,7 +44,7 @@ export const LogoContainer = styled.div`
   }
 
   .hidden {
-    visibility: hidden;
+    display: none;
     z-index: 0;
     animation: 1s ${fade};
   }
