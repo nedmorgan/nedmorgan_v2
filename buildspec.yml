@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing latest version of node...
+      - npm i npm@latest -g
+  pre_build:
+    commands:
+      - echo Installing project dependencies...
+      - npm install
+  build:
+    commands:
+      - echo Running the build...
+      - npm run build
+  post_build:
+    commands:
+      - echo Syncing new files to S3...
+      - aws s3 sync ./build $S3_BUCKET
+      - echo Sync complete and new site deployed!
