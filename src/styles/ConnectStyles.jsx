@@ -30,13 +30,13 @@ export const ConnectContainer = styled.div`
     visibility: hidden;
   }
 
-  @media (min-width: 801px) and (max-width: 1024px) {
+  @media (min-width: 711px) and (max-width: 1024px) {
     .connect-icon {
       font-size: 2.5em;
     }
   }
 
-  @media (min-width: 601px) and (max-width: 800px) {
+  @media (min-width: 601px) and (max-width: 770px) {
     .connect-icon {
       font-size: 2.25em;
     }
