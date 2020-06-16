@@ -30,6 +30,18 @@ export const ConnectContainer = styled.div`
     visibility: hidden;
   }
 
+  @media (min-width: 801px) and (max-width: 1024px) {
+    .connect-icon {
+      font-size: 2.5em;
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 800px) {
+    .connect-icon {
+      font-size: 2.25em;
+    }
+  }
+
   @media screen and (max-width: 600px) {
     animation: 1s ${fadeDown};
     width: 50%;

@@ -104,8 +104,64 @@ export const PortfolioContainer = styled.div`
     cursor: pointer;
   }
 
-  @media screen and (max-width: 600px) {
+  .invisible {
+    display: none;
+  }
+
+  @media (min-width: 771px) and (max-width: 1024px) {
     padding-bottom: 60%;
+  }
+
+  .carousel {
+    width: 80vw !important;
+  }
+
+  .close-icon {
+    padding-right: 2em;
+    padding-bottom: 0.5em;
+    font-size: 2.25em;
+  }
+
+  @media (min-width: 601px) and (max-width: 770px) {
+    padding-bottom: 60%;
+  }
+
+  .carousel {
+    width: 80vw !important;
+  }
+
+  .close-icon {
+    padding-right: 2em;
+    padding-bottom: 0.5em;
+    font-size: 2.25em;
+  }
+
+  @media (min-width: 371px) and (max-width: 600px) {
+    padding-bottom: 60%;
+
+    .close-icon {
+      padding-right: 2em;
+      padding-bottom: 0.5em;
+      font-size: 1.5em;
+    }
+
+    .carousel {
+      width: 75vw !important;
+    }
+
+    .web-link {
+      font-size: 1.25em;
+    }
+
+    .slide-container .link-content:hover .text {
+      opacity: 1;
+      transform: translateY(70px);
+      -webkit-transform: translateY(70px);
+    }
+  }
+
+  @media screen and (max-width: 370px) {
+    padding-bottom: 55%;
 
     .close-icon {
       padding-right: 2em;

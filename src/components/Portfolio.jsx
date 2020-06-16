@@ -32,7 +32,9 @@ export default class Portfolio extends Component {
               className='far fa-times-circle close-icon'
             ></i>
           </div>
-        ) : null}
+        ) : (
+          <div className='invisible'></div>
+        )}
         {this.props.displayPortfolio ? (
           <Carousel className='carousel-container'>
             {portfolioSlides.map((slide, i) => {
@@ -57,7 +59,9 @@ export default class Portfolio extends Component {
               )
             })}
           </Carousel>
-        ) : null}
+        ) : (
+          <div className='invisible'></div>
+        )}
       </PortfolioContainer>
     )
   }

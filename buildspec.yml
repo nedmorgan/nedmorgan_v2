@@ -18,7 +18,5 @@ phases:
   post_build:
     commands:
       - echo Syncing new files to S3...
-      - aws s3 sync build $S3_BUCKET/
-      # - echo Removing artifact files...
-      # - aws s3 rm $S3_BUCKET/nedmorganV2-build --recursive
+      - aws s3 sync ./build $S3_BUCKET
       - echo Sync complete and new site deployed!

@@ -9,10 +9,11 @@ import Portfolio from '../src/components/Portfolio'
 const axios = require('axios')
 
 // API Endpoint
-const api_endpoint = 'https://8hb7niq8e4.execute-api.us-east-1.amazonaws.com/Prod/send'
+const api_endpoint =
+  'https://8hb7niq8e4.execute-api.us-east-1.amazonaws.com/Prod/send'
 
 // Variable to check is site is on mobile device
-const isMobile = window.innerWidth < 600
+const isMobile = window.innerWidth <= 1024
 
 export default class App extends Component {
   constructor(props) {
@@ -76,7 +77,13 @@ export default class App extends Component {
   toggleConnect = (e) => {
     e.preventDefault()
     this.setState((state, props) => {
-      return { displaySocial: !state.displaySocial, activeNav: false }
+      return {
+        displaySocial: !state.displaySocial,
+        activeNav: false,
+        displayAbout: false,
+        hideLogo: false,
+        displayPortfolio: false,
+      }
     })
   }
 
@@ -134,6 +141,8 @@ export default class App extends Component {
     this.setState((state, props) => {
       return {
         displayModal: true,
+        displayAbout: false,
+        displayPortfolio: false,
         hideLogo: true,
         displaySocial: false,
         activeNav: false,
@@ -232,7 +241,10 @@ export default class App extends Component {
           displayEmailIcon={this.state.displayEmailIcon}
         />
         <Social displaySocial={this.state.displaySocial} />
-        <About displayAbout={this.state.displayAbout} toggleAbout={this.toggleAbout} />
+        <About
+          displayAbout={this.state.displayAbout}
+          toggleAbout={this.toggleAbout}
+        />
         <Modal
           displayModal={this.state.displayModal}
           hideModal={this.hideModal}
@@ -245,8 +257,14 @@ export default class App extends Component {
           displayErrorEmailText={this.state.displayErrorEmailText}
           isValidEmail={this.state.isValidEmail}
         />
-        <Logo displayModal={this.state.displayModal} hideLogo={this.state.hideLogo} />
-        <Portfolio displayPortfolio={this.state.displayPortfolio} togglePortfolio={this.togglePortfolio} />
+        <Logo
+          displayModal={this.state.displayModal}
+          hideLogo={this.state.hideLogo}
+        />
+        <Portfolio
+          displayPortfolio={this.state.displayPortfolio}
+          togglePortfolio={this.togglePortfolio}
+        />
       </div>
     )
   }

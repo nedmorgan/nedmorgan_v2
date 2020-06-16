@@ -49,6 +49,24 @@ export const LogoContainer = styled.div`
     animation: 1s ${fade};
   }
 
+  @media (min-width: 771px) and (max-width: 1024px) {
+    height: 70vh;
+    z-index: 0;
+
+    p {
+      font-size: 5.25em;
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 770px) {
+    height: 70vh;
+    z-index: 0;
+
+    p {
+      font-size: 4.25em;
+    }
+  }
+
   @media screen and (max-width: 600px) {
     height: 80vh;
     z-index: 0;

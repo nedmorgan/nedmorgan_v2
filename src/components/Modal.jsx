@@ -69,7 +69,7 @@ export default class Modal extends Component {
                   className='comment-box'
                   type='text'
                   name='comment'
-                  rows='6'
+                  rows='9'
                   placeholder='Message...'
                   required
                 />

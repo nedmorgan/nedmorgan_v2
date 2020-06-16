@@ -49,6 +49,19 @@ export const NavContainer = styled.div`
     color: whitesmoke;
   }
 
+  @media (min-width: 771px) and (max-width: 1024px) {
+    .nav-link {
+      padding-bottom: 0.5em;
+      font-size: 1.75em;
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 770px) {
+    .nav-link {
+      padding-bottom: 0.5em;
+    }
+  }
+
   @media screen and (max-width: 600px) {
     justify-content: space-evenly;
     position: absolute;

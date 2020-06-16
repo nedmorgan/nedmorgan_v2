@@ -81,7 +81,7 @@ export const ModalContainer = styled.div`
   }
 
   .comment-box {
-    width: 98%;
+    width: 97%;
     resize: none;
   }
 
@@ -157,9 +157,122 @@ export const ModalContainer = styled.div`
     visibility: hidden;
   }
 
-  @media screen and (max-width: 600px) {
+  @media (min-width: 771px) and (max-width: 1024px) {
+    z-index: 3;
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 0;
+    }
+
+    .close-button {
+      font-size: 2em;
+    }
+
+    .button-div {
+      padding-left: 0.5em;
+      z-index: 9;
+    }
+
+    form {
+      z-index: 8;
+    }
+
+    .form-inputs {
+      margin-top: 0;
+    }
+
+    .form-inputs,
+    .comment-box {
+      font-size: 1.25em;
+    }
+
+    .form-labels {
+      display: flex;
+      flex-direction: column;
+      margin-top: 0.75em;
+      width: 85%;
+    }
+
+    .form-labels:last-of-type {
+      margin-top: 0;
+      max-height: 260px;
+      min-height: 10px;
+    }
+
+    .modal-main {
+      width: 80%;
+      height: 40%;
+      top: 33%;
+      z-index: 7;
+    }
+
+    .comment-box {
+      margin-top: 0;
+      resize: none;
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 770px) {
+    z-index: 3;
+
+    h1 {
+      font-size: 1.75em;
+      margin-bottom: 0;
+    }
+
+    .button-div {
+      padding-left: 0.5em;
+      z-index: 9;
+    }
+
+    form {
+      z-index: 8;
+    }
+
+    .form-inputs {
+      margin-top: 0;
+    }
+
+    .form-inputs,
+    .comment-box {
+      font-size: 1.25em;
+    }
+
+    .form-labels {
+      display: flex;
+      flex-direction: column;
+      margin-top: 0.5em;
+      width: 85%;
+    }
+
+    .form-labels:last-of-type {
+      margin-top: 0;
+      max-height: 160px;
+      min-height: 60px;
+    }
+
+    .modal-main {
+      width: 80%;
+      height: 42%;
+      top: 33%;
+      z-index: 7;
+    }
+
+    .comment-box {
+      margin-top: 0;
+      resize: none;
+    }
+  }
+
+  @media (min-width: 371px) and (max-width: 600px) {
     z-index: 3;
     margin-top: 2em;
+
+    h1 {
+      font-size: 1.25em;
+      margin-bottom: 0;
+    }
 
     .close-button {
       padding-top: 0.25em;
@@ -174,32 +287,115 @@ export const ModalContainer = styled.div`
       z-index: 8;
     }
 
+    .form-inputs {
+      margin-top: 0;
+    }
+
     .form-labels {
       display: flex;
       flex-direction: column;
-      margin-top: 0.75em;
+      margin-top: 0.5em;
+      width: 85%;
     }
 
     .form-labels:last-of-type {
       margin-top: 0;
-      max-height: 200px;
-      min-height: 50px;
+      max-height: 160px;
+      min-height: 60px;
     }
 
     .modal-main {
-      width: 80%;
-      height: 63%;
-      top: 39%;
+      width: 85%;
+      height: 58%;
+      top: 37%;
       z-index: 7;
     }
 
     .comment-box {
-      resize: vertical;
-      max-height: 90%;
+      margin-top: 0;
+      resize: none;
     }
 
     .form-inputs,
     .comment-box {
+      margin-top: 0.25em;
+      margin-left: 0;
+      font-size: 0.95em;
+    }
+
+    .submit-button {
+      width: 75%;
+      margin-left: 0.5em;
+      margin: 0 auto;
+      margin-top: 0.35em;
+      z-index: 10;
+    }
+
+    .invalid-form-text,
+    .success-text {
+      font-size: 0.75em;
+    }
+  }
+
+  @media screen and (max-width: 370px) {
+    z-index: 3;
+    margin-top: 1em;
+
+    h1 {
+      font-size: 1em;
+      margin-bottom: 0;
+    }
+
+    .close-button {
+      padding-top: 0.25em;
+      font-size: 1em;
+    }
+
+    .button-div {
+      padding-left: 0.5em;
+      z-index: 9;
+    }
+
+    form {
+      z-index: 8;
+    }
+
+    .form-inputs {
+      margin-top: 0;
+    }
+
+    .form-labels {
+      display: flex;
+      flex-direction: column;
+      margin-top: 0.5em;
+      width: 85%;
+    }
+
+    .form-labels:last-of-type {
+      margin-top: 0;
+      max-height: 160px;
+      min-height: 60px;
+    }
+
+    .modal-main {
+      width: 85%;
+      height: 65%;
+      top: 42%;
+      z-index: 7;
+    }
+
+    .invalid-form-text,
+    .success-text {
+      font-size: 0.75em;
+    }
+
+    .comment-box {
+      max-height: 75%;
+      margin-top: 0;
+      resize: none;
+    }
+
+    .form-inputs {
       margin-top: 0.25em;
       margin-left: 0;
       font-size: 0.85em;
