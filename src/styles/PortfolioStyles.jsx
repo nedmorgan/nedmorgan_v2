@@ -17,7 +17,7 @@ export const PortfolioContainer = styled.div`
   }
 
   .carousel {
-    width: 50vw !important;
+    width: 60vw !important;
     opacity: 0.7 !important;
     margin: 0 auto;
   }
@@ -39,7 +39,7 @@ export const PortfolioContainer = styled.div`
   }
 
   img {
-    min-width: 100%;
+    max-width: 100%;
   }
 
   ul.control-dots {
@@ -97,7 +97,7 @@ export const PortfolioContainer = styled.div`
     color: whitesmoke;
     font-size: 2em;
     float: right;
-    padding-right: 22%;
+    padding-right: 4em;
   }
 
   .close-icon:hover {
@@ -108,39 +108,33 @@ export const PortfolioContainer = styled.div`
     display: none;
   }
 
-  @media (min-width: 771px) and (max-width: 1024px) {
-    padding-bottom: 60%;
-  }
-
-  .carousel {
-    width: 80vw !important;
-  }
-
-  .close-icon {
-    padding-right: 2em;
-    padding-bottom: 0.5em;
-    font-size: 2.25em;
-  }
-
   @media (min-width: 601px) and (max-width: 770px) {
     padding-bottom: 60%;
-  }
 
-  .carousel {
-    width: 80vw !important;
-  }
+    .slider-wrapper {
+      width: 100% !important;
+    }
 
-  .close-icon {
-    padding-right: 2em;
-    padding-bottom: 0.5em;
-    font-size: 2.25em;
+    .carousel {
+      width: 80vw !important;
+    }
+
+    .close-icon {
+      padding-right: 1em;
+      padding-bottom: 0.5em;
+      font-size: 2.25em;
+    }
   }
 
   @media (min-width: 371px) and (max-width: 600px) {
     padding-bottom: 60%;
 
+    .slider-wrapper {
+      width: 100% !important;
+    }
+
     .close-icon {
-      padding-right: 2em;
+      padding-right: 1.25em;
       padding-bottom: 0.5em;
       font-size: 1.5em;
     }
@@ -163,8 +157,12 @@ export const PortfolioContainer = styled.div`
   @media screen and (max-width: 370px) {
     padding-bottom: 55%;
 
+    .slider-wrapper {
+      width: 100% !important;
+    }
+
     .close-icon {
-      padding-right: 2em;
+      padding-right: 1.25em;
       padding-bottom: 0.5em;
       font-size: 1.5em;
     }
