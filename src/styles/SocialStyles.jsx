@@ -30,9 +30,9 @@ export const SocialContainer = styled.div`
   }
 
   .social-icon {
-    padding-top: 1em;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-top: 0.75em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
     font-size: 2em;
     color: black;
   }

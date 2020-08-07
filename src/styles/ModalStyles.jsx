@@ -53,6 +53,7 @@ export const ModalContainer = styled.div`
     text-align: center;
     font-family: 'Raleway', sans-serif;
     color: black;
+    margin-bottom: 0;
   }
 
   form {
@@ -76,7 +77,7 @@ export const ModalContainer = styled.div`
   }
 
   .form-inputs {
-    width: 98%;
+    width: 97%;
     margin-top: 1em;
   }
 
@@ -103,6 +104,7 @@ export const ModalContainer = styled.div`
     -webkit-appearance: none;
     color: black;
     font-size: 1em;
+    font-weight: bold;
     width: 75%;
     padding: 0.25em;
     margin-bottom: 1em;
@@ -120,8 +122,7 @@ export const ModalContainer = styled.div`
     font-weight: bold;
     background-color: rgba(50, 87, 168, 0.9);
     cursor: pointer;
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-      0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
   }
 
   .success-text {
