@@ -19,6 +19,11 @@ const portfolioSlides = [
     url: 'http://www.myweather.xyz/',
     image: 'https://nedmorgan-static.s3.us-east-2.amazonaws.com/myWeather.png',
   },
+  {
+    title: 'Quarantine BINGO',
+    url: 'https://quarantinebingo.netlify.app/',
+    image: 'https://nedmorgan-static.s3.us-east-2.amazonaws.com/quaratine_bingo.png',
+  },
 ]
 
 export default class Portfolio extends Component {
@@ -27,10 +32,7 @@ export default class Portfolio extends Component {
       <PortfolioContainer>
         {this.props.displayPortfolio ? (
           <div>
-            <i
-              onClick={(e) => this.props.togglePortfolio(e)}
-              className='far fa-times-circle close-icon'
-            ></i>
+            <i onClick={(e) => this.props.togglePortfolio(e)} className='far fa-times-circle close-icon'></i>
           </div>
         ) : (
           <div className='invisible'></div>
@@ -43,14 +45,7 @@ export default class Portfolio extends Component {
                   <img src={slide.image} alt={slide.title} />
                   <div className='link-content'>
                     <div className='text'>
-                      <a
-                        className='web-link'
-                        href={slide.url}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        tabIndex={i}
-                        title={slide.title}
-                      >
+                      <a className='web-link' href={slide.url} target='_blank' rel='noopener noreferrer' tabIndex={i} title={slide.title}>
                         Visit!
                       </a>
                     </div>
