@@ -8,7 +8,7 @@ export const PortfolioContainer = styled.div`
   bottom: 0;
   margin: 0 auto;
   width: 100%;
-  padding-bottom: 5%;
+  padding-bottom: 8%;
   display: flex;
   flex-direction: column;
 
@@ -17,9 +17,13 @@ export const PortfolioContainer = styled.div`
   }
 
   .carousel {
-    width: 60vw !important;
+    width: 500px !important;
     opacity: 0.7 !important;
     margin: 0 auto;
+  }
+
+  .carousel .slide {
+    background: none;
   }
 
   .carousel-status {
@@ -40,6 +44,8 @@ export const PortfolioContainer = styled.div`
 
   img {
     max-width: 100%;
+    height: auto;
+    display: block;
   }
 
   ul.control-dots {
@@ -97,7 +103,7 @@ export const PortfolioContainer = styled.div`
     color: whitesmoke;
     font-size: 2em;
     float: right;
-    padding-right: 4em;
+    padding-right: 25%;
   }
 
   .close-icon:hover {
@@ -109,7 +115,7 @@ export const PortfolioContainer = styled.div`
   }
 
   @media (min-width: 601px) and (max-width: 770px) {
-    padding-bottom: 60%;
+    padding-bottom: 50%;
 
     .slider-wrapper {
       width: 100% !important;
@@ -127,7 +133,7 @@ export const PortfolioContainer = styled.div`
   }
 
   @media (min-width: 371px) and (max-width: 600px) {
-    padding-bottom: 60%;
+    padding-bottom: 55%;
 
     .slider-wrapper {
       width: 100% !important;
