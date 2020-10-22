@@ -5,10 +5,9 @@ export const fade = keyframes`${fadeIn}`
 
 export const PortfolioContainer = styled.div`
   position: absolute;
-  bottom: 0;
+  bottom: 15%;
   margin: 0 auto;
   width: 100%;
-  padding-bottom: 8%;
   display: flex;
   flex-direction: column;
 
@@ -115,7 +114,7 @@ export const PortfolioContainer = styled.div`
   }
 
   @media (min-width: 601px) and (max-width: 770px) {
-    padding-bottom: 50%;
+    bottom: 40%;
 
     .slider-wrapper {
       width: 100% !important;
@@ -133,7 +132,7 @@ export const PortfolioContainer = styled.div`
   }
 
   @media (min-width: 371px) and (max-width: 600px) {
-    padding-bottom: 55%;
+    bottom: 40%;
 
     .slider-wrapper {
       width: 100% !important;
@@ -161,7 +160,7 @@ export const PortfolioContainer = styled.div`
   }
 
   @media screen and (max-width: 370px) {
-    padding-bottom: 55%;
+    bottom: 40%;
 
     .slider-wrapper {
       width: 100% !important;
