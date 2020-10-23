@@ -307,8 +307,8 @@ export const ModalContainer = styled.div`
 
     .modal-main {
       width: 85%;
-      height: 60%;
-      top: 40%;
+      height: 65%;
+      top: 42%;
       z-index: 7;
     }
 
