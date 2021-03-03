@@ -10,11 +10,6 @@ const portfolioSlides = [
     image: 'https://nedmorgan-static.s3.us-east-2.amazonaws.com/radtrails.png',
   },
   {
-    title: 'Vago',
-    url: 'https://vago-travel.herokuapp.com/',
-    image: 'https://nedmorgan-static.s3.us-east-2.amazonaws.com/vago_app.png',
-  },
-  {
     title: 'Quarantine BINGO',
     url: 'https://quarantinebingo.netlify.app/',
     image: 'https://nedmorgan-static.s3.us-east-2.amazonaws.com/quaratine_bingo.png',
