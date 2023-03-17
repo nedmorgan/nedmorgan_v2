@@ -5,12 +5,11 @@ import Logo from '../src/components/Logo'
 import Social from '../src/components/Social'
 import Modal from '../src/components/Modal'
 import About from '../src/components/About'
-import Portfolio from '../src/components/Portfolio'
+// import Portfolio from '../src/components/Portfolio'
 const axios = require('axios')
 
 // API Endpoint
-const api_endpoint =
-  'https://8hb7niq8e4.execute-api.us-east-1.amazonaws.com/Prod/send'
+const api_endpoint = 'https://8hb7niq8e4.execute-api.us-east-1.amazonaws.com/Prod/send'
 
 // Variable to check is site is on mobile device
 const isMobile = window.innerWidth <= 1024
@@ -231,20 +230,9 @@ export default class App extends Component {
   render() {
     return (
       <div className='App'>
-        <NavBar
-          toggleConnect={this.toggleConnect}
-          toggleAbout={this.toggleAbout}
-          toggleNav={this.toggleNav}
-          togglePortfolio={this.togglePortfolio}
-          activeNav={this.state.activeNav}
-          openModal={this.openModal}
-          displayEmailIcon={this.state.displayEmailIcon}
-        />
+        <NavBar toggleConnect={this.toggleConnect} toggleAbout={this.toggleAbout} toggleNav={this.toggleNav} togglePortfolio={this.togglePortfolio} activeNav={this.state.activeNav} openModal={this.openModal} displayEmailIcon={this.state.displayEmailIcon} />
         <Social displaySocial={this.state.displaySocial} />
-        <About
-          displayAbout={this.state.displayAbout}
-          toggleAbout={this.toggleAbout}
-        />
+        <About displayAbout={this.state.displayAbout} toggleAbout={this.toggleAbout} />
         <Modal
           displayModal={this.state.displayModal}
           hideModal={this.hideModal}
@@ -257,14 +245,8 @@ export default class App extends Component {
           displayErrorEmailText={this.state.displayErrorEmailText}
           isValidEmail={this.state.isValidEmail}
         />
-        <Logo
-          displayModal={this.state.displayModal}
-          hideLogo={this.state.hideLogo}
-        />
-        <Portfolio
-          displayPortfolio={this.state.displayPortfolio}
-          togglePortfolio={this.togglePortfolio}
-        />
+        <Logo displayModal={this.state.displayModal} hideLogo={this.state.hideLogo} />
+        {/* <Portfolio displayPortfolio={this.state.displayPortfolio} togglePortfolio={this.togglePortfolio} /> */}
       </div>
     )
   }

@@ -4,7 +4,7 @@ import { NavContainer } from '../styles/NavBarStyles'
 
 const MENU = [
   { title: 'About Me', id: 1 },
-  { title: 'Portfolio', id: 2 },
+  // { title: 'Portfolio', id: 2 },
   { title: 'Connect', id: 3 },
 ]
 
@@ -31,17 +31,19 @@ export default class NavBar extends Component {
             <button
               className={this.props.activeNav ? 'nav-link-drop' : 'nav-link'}
               id={`topnav${MENU[1].id}`}
-              onClick={(e) => this.props.togglePortfolio(e)}
+              onClick={(e) => this.props.toggleConnect(e)
+              // onClick={(e) => this.props.togglePortfolio(e)
+            }
             >
               {MENU[1].title}
             </button>
-            <button
+            {/* <button
               className={this.props.activeNav ? 'nav-link-drop' : 'nav-link'}
               id={`topnav${MENU[2].id}`}
               onClick={(e) => this.props.toggleConnect(e)}
             >
               {MENU[2].title}
-            </button>
+            </button> */}
           </div>
         </nav>
         <Connect
