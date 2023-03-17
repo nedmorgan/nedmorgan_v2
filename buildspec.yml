@@ -4,7 +4,7 @@ phases:
   install:
     commands:
       - echo Installing latest version of node...
-      - npm i npm@latest -g
+      - npm i npm@6.13.4 -g
   pre_build:
     commands:
       - echo Installing project dependencies...
